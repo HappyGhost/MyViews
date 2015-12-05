@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlueBackground"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="beforeDescendants"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="396dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/masthead" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.mysource.myview.ui.widget.chart.AccountSummaryChart
+                android:id="@+id/accountSummaryChart"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="27dp"
+                android:paddingTop="30dp" />
+
+            <include
+                android:id="@+id/item_watch_list"
+                layout="@layout/include_watch_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp" />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>

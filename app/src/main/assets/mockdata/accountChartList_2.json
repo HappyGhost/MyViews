@@ -1,0 +1,69 @@
+{
+  "accountHistory": [
+    {
+      "dateTime": "Aug 15",
+      "value": 60000000,
+      "shouldDisplay": false
+    },
+    {
+      "dateTime": "Aug 17",
+      "value": 70000000,
+      "shouldDisplay": false
+    },
+    {
+      "dateTime": "Aug 19",
+      "value": 80000000,
+      "shouldDisplay": false
+    },
+    {
+      "dateTime": "Aug 26",
+      "value": 60000000,
+      "shouldDisplay": true
+    },
+    {
+      "dateTime": "Aug 27",
+      "value": 70000000,
+      "shouldDisplay": false
+    },
+    {
+      "dateTime": "Sep 4",
+      "value": 70000000,
+      "shouldDisplay": false
+    },
+    {
+      "dateTime": "Sep 9",
+      "value": 40000000,
+      "shouldDisplay": false
+    },
+    {
+      "dateTime": "Sep 26",
+      "value": 90000000,
+      "shouldDisplay": true
+    },
+    {
+      "dateTime": "Oct 15",
+      "value": 40000000,
+      "shouldDisplay": false
+    },
+    {
+      "dateTime": "Oct 20",
+      "value": 90000000,
+      "shouldDisplay": false
+    },
+    {
+      "dateTime": "Oct 26",
+      "value": 99000000,
+      "shouldDisplay": false
+    },
+    {
+      "dateTime": "Oct 26",
+      "value": 55000000,
+      "shouldDisplay": true
+    },
+    {
+      "dateTime": "Oct 30",
+      "value": 99000000,
+      "shouldDisplay": false
+    }
+  ]
+}

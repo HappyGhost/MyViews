@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Chart View -->
+    <color name="whiteColor">#ffffff</color>
+    <color name="colorBlueBackground">#037ab4</color>
+    <color name="blue_light">#008fd5</color>
+    <color name="colorDivLine">#d6dbdd</color>
+    <color name="white">#ffffff</color>
+    <color name="colorWhite">#dbe8ee</color>
+    <color name="colorChartAccountEndBackground">#00dbe8ee</color>
+    <color name="colorWhiteHover">#e6e6e6</color>
+    <color name="colorBlack">#333333</color>
+    <color name="colorMarketDown">#ff5538</color>
+    <color name="colorMarketUp">#69af39</color>
+
+</resources>

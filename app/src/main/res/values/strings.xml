@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MySource</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_enter_number">Enter number from 1 to 12</string>
+
+    <string name="title_description_chart_view_item">Chart view displayed in item of list view</string>
+</resources>

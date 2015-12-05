@@ -1,0 +1,24 @@
+{
+  "accountHistory": [
+    {
+      "dateTime": "Aug 15",
+      "value": 60000000,
+      "shouldDisplay": false
+    },
+    {
+      "dateTime": "Aug 17",
+      "value": 70000000,
+      "shouldDisplay": false
+    },
+    {
+      "dateTime": "Aug 19",
+      "value": 80000000,
+      "shouldDisplay": false
+    },
+    {
+      "dateTime": "Aug 26",
+      "value": 60000000,
+      "shouldDisplay": true
+    }
+  ]
+}
