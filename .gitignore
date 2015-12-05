@@ -1,0 +1,12 @@
+.gradle
+/local.properties
+.DS_Store
+build
+/captures
+*.iml
+.idea
+hololike.css
+lint-error.png
+lint-report.html
+lint-run.png
+lint-warning.png
