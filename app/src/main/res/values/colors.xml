@@ -13,5 +13,12 @@
     <color name="colorBlack">#333333</color>
     <color name="colorMarketDown">#ff5538</color>
     <color name="colorMarketUp">#69af39</color>
+    <color name="colorBackgroundWhiteDarker">#f7f8f8</color>
+    <color name="colorTextLighter">#979fa6</color>
+    <color name="colorRangeTimeNormal">#008fd5</color>
+    <color name="colorChartUpBackground">#B1EF87</color>
+    <color name="colorChartUpEndBackground">#00CDF6B1</color>
+    <color name="colorChartDownBackground">#FF5538</color>
+    <color name="colorChartDownEndBackground">#00FEBAAE</color>
 
 </resources>

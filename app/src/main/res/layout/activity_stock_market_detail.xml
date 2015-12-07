@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- The main content view -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_title_bar_with_refresh" />
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackgroundWhiteDarker">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/last_update_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/colorTextLighter"
+                android:textSize="@dimen/text_small" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/market_chart_detail_background"
+                android:paddingLeft="1dp"
+                android:paddingRight="1dp">
+
+
+                <LinearLayout
+                    android:id="@+id/lnIndexText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/index_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/text_market_detail_index" />
+
+                    <TextView
+                        android:id="@+id/index_fraction_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="1.5dp"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/text_market_detail_index_fraction" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/index_change_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lnIndexText"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/colorMarketUp"
+                    android:textSize="@dimen/text_small" />
+
+                <com.mysource.myview.ui.widget.LockScrollViewGroup
+                    android:id="@+id/chart_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/div_line"
+                    android:layout_below="@+id/index_change_text"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="20dp">
+
+                    <com.mysource.myview.ui.widget.chart.ChartView
+                        android:id="@+id/chart_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="30dp" />
+                </com.mysource.myview.ui.widget.LockScrollViewGroup>
+
+
+                <View
+                    android:id="@+id/div_line"
+                    style="@style/horizontalDiv"
+                    android:layout_height="1dp"
+                    android:layout_above="@+id/bottom_bar"
+                    android:layout_alignParentBottom="false"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp" />
+
+                <LinearLayout
+                    android:id="@+id/bottom_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:layout_alignParentBottom="true"
+                    android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/one_day_button"
+                            android:layout_width="39dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:text="@string/text_1day"
+                            android:textColor="@drawable/time_button_selector"
+                            android:textSize="@dimen/text_normal"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/one_month_button"
+                            android:layout_width="39dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:text="@string/text_1month"
+                            android:textColor="@drawable/time_button_selector"
+                            android:textSize="@dimen/text_normal"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/two_months_button"
+                            android:layout_width="39dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:text="@string/text_2month"
+                            android:textColor="@drawable/time_button_selector"
+                            android:textSize="@dimen/text_normal"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/three_months_button"
+                            android:layout_width="39dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:text="@string/text_3month"
+                            android:textColor="@drawable/time_button_selector"
+                            android:textSize="@dimen/text_normal"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

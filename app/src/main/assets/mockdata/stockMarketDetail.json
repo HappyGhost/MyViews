@@ -1,0 +1,79 @@
+{
+    "name": "HOSE",
+    "history": [
+        {
+            "dateTime": "10:05",
+            "value": 567
+        },
+        {
+            "dateTime": "10:10",
+            "value": 400
+        },
+        {
+            "dateTime": "10:15",
+            "value": 560
+        },
+        {
+            "dateTime": "10:20",
+            "value": 630
+        },
+        {
+            "dateTime": "10:25",
+            "value": 600
+        },
+        {
+            "dateTime": "10:30",
+            "value": 567
+        },
+        {
+            "dateTime": "10:35",
+            "value": 400
+        },
+        {
+            "dateTime": "10:40",
+            "value": 300
+        },
+        {
+            "dateTime": "10:45",
+            "value": 330
+        },
+        {
+            "dateTime": "10:50",
+            "value": 320
+        },
+        {
+            "dateTime": "10:55",
+            "value": 360
+        },
+        {
+            "dateTime": "10:60",
+            "value": 400
+        },
+        {
+            "dateTime": "10:65",
+            "value": 560
+        },
+        {
+            "dateTime": "10:70",
+            "value": 580
+        },
+        {
+            "dateTime": "10:75",
+            "value": 600
+        },
+        {
+            "dateTime": "10:80",
+            "value": 400
+        }
+    ],
+    "stats": {
+        "open": 652.12,
+        "high": 689.01,
+        "low": 642.96,
+        "volume": "82,952,192",
+        "marketCap": "1.442 Billion VND"
+    },
+    "value": 572.12,
+    "percentChanged": 1.59,
+    "updatedDate": "2013-04-24T22:53:03+00:00"
+}

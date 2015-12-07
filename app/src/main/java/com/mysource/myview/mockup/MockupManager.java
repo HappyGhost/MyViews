@@ -18,6 +18,7 @@ public class MockUpManager {
     /* Key of json mock up */
     public static final String ACCOUNT_HISTORY_CHART = "accountChartList_2.json";
     public static final String MARKET_LIST_DATA = "marketListData.json";
+    public static final String STOCK_MARKET_DETAIL = "stockMarketDetail.json";
 
     private MockUpManager() {
 

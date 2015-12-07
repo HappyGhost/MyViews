@@ -21,7 +21,11 @@
         <activity
             android:name=".ui.activity.CycleAnimationActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.activity.MarketDetailActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

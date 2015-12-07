@@ -27,4 +27,5 @@ public class MarketAdapter extends BaseAdapter<MarketModel, MarketHolder> {
         super.onBindViewHolder(holder, position);
         holder.bindData(mData.get(position));
     }
+
 }

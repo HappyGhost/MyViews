@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/border_white_background"
+    android:paddingBottom="3dp"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -29,6 +30,5 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp" />
+        android:layout_height="wrap_content"/>
 </LinearLayout>

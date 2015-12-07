@@ -6,4 +6,12 @@
     <string name="hint_enter_number">Enter number from 1 to 12</string>
 
     <string name="title_description_chart_view_item">Chart view displayed in item of list view</string>
+
+    <!-- market detail screen -->
+    <string name="text_1day">1D</string>
+    <string name="text_3month">3M</string>
+    <string name="text_2month">2M</string>
+    <string name="text_1month">1M</string>
+    <string name="text_last_updated">Last updated: %1$s</string>
+
 </resources>
