@@ -10,3 +10,6 @@ lint-error.png
 lint-report.html
 lint-run.png
 lint-warning.png
+gradle/
+gradlew.bat
+gradlew
