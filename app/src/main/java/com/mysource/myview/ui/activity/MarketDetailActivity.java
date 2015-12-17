@@ -19,10 +19,6 @@ import com.mysource.myview.util.MoneyUtils;
 import butterknife.Bind;
 import butterknife.OnClick;
 
-/**
- * Market detail screen.
- * Created by cuong.huynh on 10/7/2015.
- */
 public class MarketDetailActivity extends BaseActivity implements ChartView.OnSelectedListener{
 
     public static final String EXTRA_MARKET_NAME = "name";
@@ -81,9 +77,10 @@ public class MarketDetailActivity extends BaseActivity implements ChartView.OnSe
         mSelectedDayButton = mOneDayButton;
         setUnderlineTextView(mOneDayButton);
 
-       // mSelectedDayButton.setSelected(true);
-
+        //setup chart view parameter
         mChartView.setSelectedListener(this);
+        mChartView.setPopupColor(getResources().getColor(R.color.colorSemiBlack), getResources().getColor(R.color.colorSemiBlack), getResources().getColor(R.color.colorWhite));
+        mChartView.setPointTouchColor(getResources().getColor(R.color.colorBlueBackground), getResources().getColor(R.color.colorMarketUp));
         mModel = SampleMockUpData.getMarketDetail();
         bindDataToUI(mModel);
     }

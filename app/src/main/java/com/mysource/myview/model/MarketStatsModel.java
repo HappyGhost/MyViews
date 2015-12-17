@@ -10,7 +10,6 @@ import com.google.gson.annotations.SerializedName;
  * "volume": "82,952,192",
  * "marketCap": "1.442B"
  *
- * Created by cuong.huynh on 10/13/2015.
  */
 public class MarketStatsModel implements IModel {
     @SerializedName("open")

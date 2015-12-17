@@ -12,7 +12,7 @@ import com.mysource.myview.ui.adapter.BaseAdapter;
 import com.mysource.myview.ui.adapter.MarketAdapter;
 import com.mysource.myview.ui.widget.DividerItemDecoration;
 import com.mysource.myview.ui.widget.LinearLayoutManager;
-import com.mysource.myview.ui.widget.chart.AccountSummaryChart;
+import com.mysource.myview.ui.widget.chart.ChartView;
 
 import butterknife.Bind;
 
@@ -22,7 +22,7 @@ import butterknife.Bind;
 public class ChartViewExampleActivity extends BaseActivity{
 
     @Bind(R.id.accountSummaryChart)
-    AccountSummaryChart mChartView;
+    ChartView mChartView;
 
     @Bind(R.id.recyclerView)
     RecyclerView rvStockMarket;
@@ -41,14 +41,14 @@ public class ChartViewExampleActivity extends BaseActivity{
     private void init() {
 
         mChartView.setStrokeColor(
-                getResources().getColor(R.color.white),
                 getResources().getColor(R.color.colorWhite),
-                getResources().getColor(R.color.colorChartAccountEndBackground)
+                getResources().getColor(R.color.colorNearlyWhite),
+                getResources().getColor(R.color.colorEndingWhite)
         );
         mChartView.setMaxCol(4);
-        mChartView.setTextColor(getResources().getColor(R.color.white));
+        mChartView.setTextColor(getResources().getColor(R.color.colorWhite));
         mChartView.setRowOffset(0);
-        mChartView.setPopupValue(AccountSummaryChart.PopupValue.VALUE);
+        mChartView.setPopupValue(ChartView.PopupValue.VALUE);
         mChartView.setData(SampleMockUpData.getChartData());
 
         rvStockMarket.setLayoutManager(new LinearLayoutManager(mContext));

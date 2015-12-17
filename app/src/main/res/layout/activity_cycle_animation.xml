@@ -303,8 +303,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:hint="@string/hint_enter_number"
-            android:textColor="@color/whiteColor"
-            android:textColorHint="@color/whiteColor"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
             android:inputType="number"
             android:visibility="visible" />
 

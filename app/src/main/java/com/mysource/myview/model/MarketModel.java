@@ -6,7 +6,6 @@ import java.util.List;
 
 /**
  * Store data of market
- * Created by cuong.huynh on 10/13/2015.
  */
 public class MarketModel implements IModel {
 //    {

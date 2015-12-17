@@ -9,20 +9,24 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.Shader;
-import android.graphics.drawable.NinePatchDrawable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.mysource.myview.R;
 import com.mysource.myview.model.ChartItemModel;
+import com.mysource.myview.util.MoneyUtils;
 import com.mysource.myview.util.TypeFaceManager;
 
 import java.util.List;
 
 public class ChartView extends View {
+    public enum PopupValue {
+        DATE,
+        VALUE
+    }
 
     public static final int CHART_TYPE_TYPE_FULL = 0;
     public static final int CHART_TYPE_TYPE_SMALL = 1;
@@ -33,7 +37,7 @@ public class ChartView extends View {
     private static final int CHART_COLOR = 0xfffdce0d;
     private static final int CHART_BACKGROUND_COLOR = 0x66fdce0d;
 
-    private static final float TEXT_BOX_WIDTH = 38;
+    private static final float TEXT_BOX_WIDTH = 34;
     private static final float TEXT_BOX_HEIGHT = 30;
     private static final float MIN_ROW_SIZE = 30;
     private static final float MIN_ROW_SIZE_FOR_SMALL_CHART = 1;
@@ -52,6 +56,8 @@ public class ChartView extends View {
     private static final float TOUCH_LABEL_TOP = 13;
     private static final float HORIZON_LINE_PADDING_TOP = 3;
     private static final float HORIZON_LINE_HEIGHT = 6;
+
+    private static final float POPUP_HEIGHT = 20;
 
     private int mChartType = CHART_TYPE_TYPE_FULL;
 
@@ -72,7 +78,9 @@ public class ChartView extends View {
     private float mChartPaddingLeft = 0;
     private float mHorizontalLinePaddingTop;
     private float mHorizontalLinePaddingHeight;
-    private float mMinLableSpacing;
+    private float mMinLabelSpacing;
+    private float mPopupHeight;
+    private float mPopupRadius;
 
     private int mRowCount = 0;
     private int mRowValueStep = 0;
@@ -85,13 +93,14 @@ public class ChartView extends View {
     private Paint mChartLinePaint;
     private Paint mChartBackgroundPaint;
     private Paint mTouchPointPaint;
+    private int mTouchPointBackgroundColor = 0xffffffff;
+    private int mTouchPointCenterColor = 0xff008fd5;
     private Paint mTouchLabelPaint;
     private Paint mTouchLinePaint;
     private Paint mHorizontalLinePaint;
+    private Paint mPopupPaint;
 
     private Matrix mIMatrix = new Matrix();
-
-    private NinePatchDrawable mPopLabel;
 
     private Bitmap mBackground;
 
@@ -99,11 +108,16 @@ public class ChartView extends View {
 
     private OnSelectedListener mListener;
     private int mBottomLabelStep = 1;
+    private int mFirstLabelDisplayed = 0;
+    private int mMaxColDisplayed = 99999;
 
     private int rowOffset = 1;
+    private PopupValue popupValue = PopupValue.DATE;
+    int mEmptyItemCount = 0;
 
     public interface OnSelectedListener {
         void onSelectedChange(int col, ChartItemModel model);
+
         void onUnselected();
     }
 
@@ -166,11 +180,10 @@ public class ChartView extends View {
         mTouchPointPaint = new Paint();
         mTouchPointPaint.setAntiAlias(true);
         mTouchPointPaint.setFilterBitmap(true);
-        mTouchPointPaint.setColor(0xff333333);
         mTouchPointPaint.setStyle(Paint.Style.FILL);
 
         mTouchLinePaint = new Paint();
-        mTouchLinePaint.setColor(0xff333333);
+        mTouchLinePaint.setColor(0xffffffff);
         mTouchLinePaint.setStyle(Paint.Style.STROKE);
         mTouchLinePaint.setPathEffect(new DashPathEffect(new float[]{5, 10}, 0));
         mTouchLinePaint.setStrokeWidth(1f * density);
@@ -178,8 +191,14 @@ public class ChartView extends View {
         mTouchLabelPaint = new Paint();
         mTouchLabelPaint.setTypeface(TypeFaceManager.getTypeFace(getContext(),
                 TypeFaceManager.FONT_MYRIADPRO_SEMIBOLD));
-        mTouchLabelPaint.setColor(0xffffffff);
+        mTouchLabelPaint.setColor(0xff008fd5);
         mTouchLabelPaint.setTextSize(12 * density);
+
+
+        mPopupPaint = new Paint();
+        mPopupPaint.setColor(0xffffffff);
+        mPopupPaint.setStyle(Paint.Style.FILL);
+        mPopupPaint.setShadowLayer(1, 1 * density, 2 * density, 0xff000000);
 
         mHorizontalLinePaint = new Paint();
         mHorizontalLinePaint.setColor(0xffcad1d7);
@@ -188,7 +207,6 @@ public class ChartView extends View {
         mHorizontalLinePaint.setStrokeWidth(1f * density);
 
         // Load the image as a NinePatch drawable
-        mPopLabel = (NinePatchDrawable)getResources().getDrawable(R.drawable.shape_pop);
         mLabelTouchPadding = TOUCH_TEXT_PADDING * density;
         mLabelDelta = TOUCH_LABEL_DELTA * density;
         mTouchLabelTop = TOUCH_LABEL_TOP * density;
@@ -197,7 +215,10 @@ public class ChartView extends View {
         mHorizontalLinePaddingTop = HORIZON_LINE_PADDING_TOP * density;
         mHorizontalLinePaddingHeight = HORIZON_LINE_HEIGHT * density;
 
-        mMinLableSpacing = MIN_LABEL_SPACING * density;
+        mMinLabelSpacing = MIN_LABEL_SPACING * density;
+
+        mPopupHeight = POPUP_HEIGHT * density;
+        mPopupRadius = 4*density;
 
     }
 
@@ -211,7 +232,7 @@ public class ChartView extends View {
         if (mRowCount == 0)
             analyzingData();
 
-        if(mChartType == CHART_TYPE_TYPE_FULL) {
+        if (mChartType == CHART_TYPE_TYPE_FULL) {
 
             if (mBackground == null) {
                 mBackground = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
@@ -226,7 +247,7 @@ public class ChartView extends View {
 
     @SuppressWarnings("ConstantConditions")
     private void drawChartItemModel(Canvas canvas) {
-        if(mData == null) return;
+        if (mData == null) return;
 
         float minValue = Float.MAX_VALUE;
         float maxValue = Float.MIN_VALUE;
@@ -243,10 +264,10 @@ public class ChartView extends View {
         float yText = getHeight() - getPaddingBottom() - mTextPaddingBottom;
 
         //draw horizontal line
-        if(mChartType == CHART_TYPE_TYPE_SMALL) {
+        if (mChartType == CHART_TYPE_TYPE_SMALL) {
             Path p = new Path();
-            p.moveTo(x0, y0 - dataHeight/2);
-            p.lineTo(dataWidth + x0, y0 - dataHeight/2);
+            p.moveTo(x0, y0 - dataHeight / 2);
+            p.lineTo(dataWidth + x0, y0 - dataHeight / 2);
             canvas.drawPath(p, mHorizontalLinePaint);
         }
 
@@ -257,14 +278,14 @@ public class ChartView extends View {
         float circleY = 0;
         String label = "";
 
-        int drawLabel = 0;
+        int drawLabel = mFirstLabelDisplayed - 1;
 
         for (int i = 0; i < colCount; i++) {
             ChartItemModel item = mData.get(i);
 
             float x = x0 + i * colWidth;
 
-            if(mChartType == CHART_TYPE_TYPE_FULL && drawLabel == i && x < chartWidth) {
+            if (mChartType == CHART_TYPE_TYPE_FULL && drawLabel == i && x < chartWidth) {
 
                 Rect rect = new Rect();
                 mTextPaint.getTextBounds(item.dateTime, 0, item.dateTime.length(), rect);
@@ -277,18 +298,25 @@ public class ChartView extends View {
                 canvas.drawText(item.dateTime, xText, yText, mTextPaint);
             }
 
-            float y = y0 - ( (item.value - mMinValue) / (mMaxValue - mMinValue)) * dataHeight;
+            float y = y0 - ((item.value - mMinValue) / (mMaxValue - mMinValue)) * dataHeight;
 
-            if(Math.abs(x - touchX) < Math.abs(circleX - touchX) ) {
+            if (Math.abs(x - touchX) < Math.abs(circleX - touchX)) {
                 circleX = x;
                 circleY = y;
-                label = item.dateTime;
+                switch (popupValue) {
+                    case DATE:
+                        label = item.dateTime;
+                        break;
+                    case VALUE:
+                        label = MoneyUtils.formatCurrencyValue(item.value);
+                        break;
+                }
             }
 
-            if(maxValue < y)
+            if (maxValue < y)
                 maxValue = y;
 
-            if(minValue > y)
+            if (minValue > y)
                 minValue = y;
 
             if (chartPath == null) {
@@ -297,15 +325,19 @@ public class ChartView extends View {
 
                 bPath = new Path();
                 bPath.moveTo(x0, y0);
-            } else
-                chartPath.lineTo(x, y);
+            } else{
+                if(item.value != -1)
+                    chartPath.lineTo(x, y);
+            }
 
-            bPath.lineTo(x, y);
+            if(item.value != -1){
+                bPath.lineTo(x, y);
+            }
         }
 
-        if(chartPath != null) {
+        if (chartPath != null) {
 
-            if(mChartType == CHART_TYPE_TYPE_FULL) {
+            if (mChartType == CHART_TYPE_TYPE_FULL) {
                 if (mChartBackgroundPaint == null) {
                     mChartBackgroundPaint = new Paint();
 
@@ -318,15 +350,18 @@ public class ChartView extends View {
                     mChartBackgroundPaint.setShader(mVLGradient);
                 }
 
-                bPath.lineTo(x0 + (colCount - 1) * colWidth, y0);
+                bPath.lineTo(x0 + (colCount - mEmptyItemCount) * colWidth, y0);
                 canvas.drawPath(bPath, mChartBackgroundPaint);
             }
 
             canvas.drawPath(chartPath, mChartLinePaint);
 
-            if(touchX != -1) {
+            if (touchX != -1 && !label.equals("-1")) {
                 drawTextLabelTouch(canvas, maxValue, circleX, label);
+                mTouchPointPaint.setColor(mTouchPointBackgroundColor);
                 canvas.drawCircle(circleX, circleY, mTouchPointRadius, mTouchPointPaint);
+                mTouchPointPaint.setColor(mTouchPointCenterColor);
+                canvas.drawCircle(circleX, circleY, mTouchPointRadius/3*2, mTouchPointPaint);
             }
         }
     }
@@ -335,22 +370,26 @@ public class ChartView extends View {
 
         float textWidth = mTouchLabelPaint.measureText(label);
 
-        float xl = x-mLabelDelta;
+        float xl = x - mLabelDelta;
 
         // Set its bound where you need
-        Rect npdBounds = new Rect((int) (xl - textWidth/2 - mLabelTouchPadding), 0,
-                (int) (textWidth + mLabelTouchPadding * 2 + xl - textWidth/2), mPopLabel.getMinimumHeight());
-        mPopLabel.setBounds(npdBounds);
+//        Rect npdBounds = new Rect((int) (xl - textWidth / 2 - mLabelTouchPadding), 0,
+//                (int) (textWidth + mLabelTouchPadding * 2 + xl - textWidth / 2), mPopLabel.getMinimumHeight());
+//        mPopLabel.setBounds(npdBounds);
 
         // Finally draw on the canvas
-        mPopLabel.draw(canvas);
+//        mPopLabel.draw(canvas);
 
         Path p = new Path();
         p.moveTo(x, y0);
-        p.lineTo(x, mPopLabel.getMinimumHeight());
+        p.lineTo(x, 0);
 
         canvas.drawPath(p, mTouchLinePaint);
-
+        canvas.drawRoundRect(
+                new RectF(xl - textWidth / 2 - mLabelTouchPadding, 0,
+                textWidth + mLabelTouchPadding * 2 + xl - textWidth / 2, mPopupHeight),
+                mPopupRadius, mPopupRadius,
+                mPopupPaint);
         canvas.drawText(label, (int) (xl - textWidth / 2 + mLabelTouchPadding / 2), mTouchLabelTop, mTouchLabelPaint);
     }
 
@@ -358,7 +397,7 @@ public class ChartView extends View {
         float x0 = getX0();
         float y0 = getY0();
 
-        float rightX = x0 - mTextPaddingRight;
+//        float rightX = x0 - mTextPaddingRight;
 
         Path path = new Path();
 
@@ -368,7 +407,7 @@ public class ChartView extends View {
             //float textWidth = mTextPaint.measureText(text);
             Rect rect = new Rect();
             mTextPaint.getTextBounds(text, 0, text.length(), rect);
-            float x = rightX - rect.width();
+            float x = 0;//rightX;// - rect.width();
             float y = y0 - (i * mRowHeight);
             float yText = y + rect.height() / 2;
 
@@ -393,16 +432,16 @@ public class ChartView extends View {
     }
 
     private float getX0() {
-        return getPaddingLeft() + ( mChartType == CHART_TYPE_TYPE_FULL ? mTextBoxWidth : 0);
+        return getPaddingLeft() + (mChartType == CHART_TYPE_TYPE_FULL ? mTextBoxWidth : 0);
     }
 
     private float getY0() {
-        return getHeight() - getPaddingBottom() - ( mChartType == CHART_TYPE_TYPE_FULL ?  mTextBoxHeight : 0 );
+        return getHeight() - getPaddingBottom() - (mChartType == CHART_TYPE_TYPE_FULL ? mTextBoxHeight : 0);
     }
 
     public void setData(List<ChartItemModel> data) {
         this.mData = data;
-        if(mBackground != null && !mBackground.isRecycled())
+        if (mBackground != null && !mBackground.isRecycled())
             mBackground.recycle();
         mBackground = null;
         mRowCount = 0;
@@ -410,25 +449,33 @@ public class ChartView extends View {
         mRowValueStep = 0;
         mMaxValue = Integer.MIN_VALUE;
         mMinValue = Integer.MAX_VALUE;
+
+        invalidate();
     }
 
     private void analyzingData() {
-        if(mData == null) return;
+        if (mData == null) return;
 
         float maxValue = Integer.MIN_VALUE;
         float minValue = Integer.MAX_VALUE;
+        int emptyItemCount = 1;
         String maxLabel = "";
 
         for (ChartItemModel item : mData) {
             if (maxValue < item.value)
                 maxValue = item.value;
 
-            if (minValue > item.value)
+            if (minValue > item.value && item.value != -1)
                 minValue = item.value;
 
-            if(maxLabel.length() < item.dateTime.length())
+            if (maxLabel.length() < item.dateTime.length())
                 maxLabel = item.dateTime;
+            if(item.value == -1){
+                emptyItemCount++;
+            }
         }
+
+        this.mEmptyItemCount = emptyItemCount;
 
         //calculate maxValue and minValue to match with chart column
         float labelHeight = getDataHeight();
@@ -442,16 +489,16 @@ public class ChartView extends View {
 
             mRowValueStep = VALUE_ROW_STEP[i] * rate;
 
-            float halfStep = mRowValueStep/3f;
+            float halfStep = mRowValueStep / 3f;
 
             float minMod = minValue % mRowValueStep;
-            mMinValue = minValue - minMod - (( minMod > halfStep ? 0 : mRowValueStep) * rowOffset);
+            mMinValue = minValue - minMod - ((minMod > halfStep ? 0 : mRowValueStep) * rowOffset);
 
-            if(mMinValue < 0)
+            if (mMinValue < 0)
                 mMinValue = 0;
 
             float maxMod = (mRowValueStep - (maxValue % mRowValueStep)) % mRowValueStep;
-            mMaxValue = maxValue + maxMod + (( maxMod > halfStep ? 0 : mRowValueStep) * rowOffset);
+            mMaxValue = maxValue + maxMod + ((maxMod > halfStep ? 0 : mRowValueStep) * rowOffset);
             mRowCount = (int) Math.ceil((mMaxValue - mMinValue) / mRowValueStep);
 
             i = (i + 1) % VALUE_ROW_STEP.length;
@@ -466,10 +513,19 @@ public class ChartView extends View {
         float realWidth = dataWidth + 1;
         float sWidth = mTextPaint.measureText(maxLabel);
 
+        if(mData.size() > mMaxColDisplayed){
+            mBottomLabelStep = mData.size()/mMaxColDisplayed - 1;
+
+        }
+
         while (realWidth > dataWidth) {
             mBottomLabelStep++;
             int col = mData.size() / mBottomLabelStep - 1;
-            realWidth = sWidth/2 + col * sWidth + col * mMinLableSpacing;
+            realWidth = sWidth / 2 + col * sWidth + col * mMinLabelSpacing;
+        }
+
+        if(mFirstLabelDisplayed == 0){
+            mFirstLabelDisplayed = mBottomLabelStep;
         }
     }
 
@@ -496,12 +552,12 @@ public class ChartView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if(mData == null || mChartType != CHART_TYPE_TYPE_FULL)
+        if (mData == null || mChartType != CHART_TYPE_TYPE_FULL)
             return super.onTouchEvent(event);
 
         int action = event.getAction();
         int idx = -1;
-        if( action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE ) {
+        if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE) {
             touchX = event.getX();
             float x0 = getX0() + mChartPaddingLeft;
             float maxCol = Math.min(MAX_COL, mData.size());
@@ -510,18 +566,18 @@ public class ChartView extends View {
 
             float rX = touchX - x0;
 
-            if(rX < 0)
+            if (rX < 0)
                 rX = 0;
 
-            idx = Math.round(rX/colWidth);
+            idx = Math.round(rX / colWidth);
         } else {
             touchX = -1;
         }
 
-        if(idx != mSelectIdx && idx < mData.size() - 1) {
+        if (idx != mSelectIdx && idx < mData.size() - 1) {
             mSelectIdx = idx;
-            if(mListener != null) {
-                if(idx == -1)
+            if (mListener != null) {
+                if (idx == -1)
                     mListener.onUnselected();
                 else
                     mListener.onSelectedChange(idx, mData.get(idx));
@@ -540,20 +596,44 @@ public class ChartView extends View {
         mMinRowSize = MIN_ROW_SIZE_FOR_SMALL_CHART * density;
     }
 
-    public void setTextColor(int color){
+    public void setTextColor(int color) {
         mTextPaint.setColor(color);
+    }
+
+    public void setPopupColor(int popupBackgroundColor, int popupLineColor, int popupLabelColor){
+        mPopupPaint.setColor(popupBackgroundColor);
+        mTouchLinePaint.setColor(popupLineColor);
+        mTouchLabelPaint.setColor(popupLabelColor);
+    }
+
+    public void setPointTouchColor(int backgroundPointColor, int centerPointColor){
+        mTouchPointBackgroundColor = backgroundPointColor;
+        mTouchPointCenterColor = centerPointColor;
     }
 
     /**
      * Default of rowOffset is 1. Change it to 0 if you don't like displaying row offset.
+     *
      * @param rowOffset
      */
-    public void setRowOffset(int rowOffset){
+    public void setRowOffset(int rowOffset) {
         this.rowOffset = rowOffset;
+    }
+
+    /**
+     * set value which will be displayed in popup.
+     * @param popupValue
+     */
+    public void setPopupValue(PopupValue popupValue){
+        this.popupValue = popupValue;
     }
 
     public void setSelectedListener(OnSelectedListener listener) {
         mListener = listener;
+    }
+
+    public void setMaxCol(int maxCol){
+        mMaxColDisplayed = maxCol;
     }
 
 }

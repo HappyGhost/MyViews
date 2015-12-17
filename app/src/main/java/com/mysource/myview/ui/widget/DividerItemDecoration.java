@@ -9,10 +9,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-/**
- * Horizontal and vertical line for RecyclerView
- * Created by cuong.huynh on 10/9/2015.
- */
 @SuppressWarnings("SameParameterValue")
 public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 

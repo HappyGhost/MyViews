@@ -14,4 +14,13 @@
     <string name="text_1month">1M</string>
     <string name="text_last_updated">Last updated: %1$s</string>
 
+    <!-- Float action sample -->
+    <string-array name="text_float_action">
+        <item>Saving Online</item>
+        <item>Pay Bill</item>
+        <item>Bank Transfer</item>
+        <item>Pay Dept</item>
+        <item>QR Code</item>
+    </string-array>
+
 </resources>

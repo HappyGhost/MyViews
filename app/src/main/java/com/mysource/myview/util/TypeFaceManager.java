@@ -5,9 +5,6 @@ import android.graphics.Typeface;
 
 import java.util.HashMap;
 
-/**
- * Created by cuong.huynh on 10/9/2015.
- */
 public class TypeFaceManager {
     public static final String FONT_MYRIADPRO_REGULAR = "MyriadPro-Regular.ttf";
     public static final String FONT_MYRIADPRO_SEMIBOLD = "MyriadPro-Semibold.ttf";

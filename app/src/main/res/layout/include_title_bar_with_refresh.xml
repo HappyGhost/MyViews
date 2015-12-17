@@ -4,7 +4,7 @@
     android:id="@+id/title_bar"
     android:layout_width="match_parent"
     android:layout_height="45dp"
-    android:background="@color/white">
+    android:background="@color/colorWhite">
 
     <ImageButton
         android:id="@+id/close_button"
@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textColor="@color/colorBlack"
+        android:textColor="@color/colorSemiBlack"
         android:textSize="@dimen/text_normal"
         android:textStyle="bold"
         tools:ignore="RelativeOverlap" />

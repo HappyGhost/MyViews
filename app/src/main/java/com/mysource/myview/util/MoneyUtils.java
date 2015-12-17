@@ -3,10 +3,6 @@ package com.mysource.myview.util;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-/**
- * Format int to string with ","
- * Created by cuong.huynh on 10/9/2015.
- */
 public class MoneyUtils {
 
     public static String convertMoneyString(float value, int maxFraction) {

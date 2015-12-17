@@ -4,10 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * We follow ISO 8601 for date time;
- * Created by cuong.huynh on 10/13/2015.
- */
 public class DateTimeUtils {
 
     public static final String SERVER_DATE_TIME_PATTERN = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"; //2013-04-24T22:53:03+00:00

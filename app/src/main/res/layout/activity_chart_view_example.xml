@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.mysource.myview.ui.widget.chart.AccountSummaryChart
+            <com.mysource.myview.ui.widget.chart.ChartView
                 android:id="@+id/accountSummaryChart"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
