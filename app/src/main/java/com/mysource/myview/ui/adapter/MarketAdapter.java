@@ -1,5 +1,6 @@
 package com.mysource.myview.ui.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -12,8 +13,12 @@ import com.mysource.myview.ui.adapter.holder.MarketHolder;
  */
 public class MarketAdapter extends BaseAdapter<MarketModel, MarketHolder> {
 
-    public MarketAdapter(OnItemClickListener onItemClickListener) {
-        super(onItemClickListener);
+    public MarketAdapter(Context context) {
+        super(context);
+    }
+
+    public MarketAdapter(Context context, BaseAdapterListener onItemClickListener) {
+        super(context, onItemClickListener);
     }
 
     @Override

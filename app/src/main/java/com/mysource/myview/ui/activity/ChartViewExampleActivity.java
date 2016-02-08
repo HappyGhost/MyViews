@@ -9,6 +9,7 @@ import com.mysource.myview.R;
 import com.mysource.myview.mockup.SampleMockUpData;
 import com.mysource.myview.model.MarketModel;
 import com.mysource.myview.ui.adapter.BaseAdapter;
+import com.mysource.myview.ui.adapter.BaseAdapterListener;
 import com.mysource.myview.ui.adapter.MarketAdapter;
 import com.mysource.myview.ui.widget.DividerItemDecoration;
 import com.mysource.myview.ui.widget.LinearLayoutManager;
@@ -19,7 +20,7 @@ import butterknife.Bind;
 /**
  * Created by Tung.Hoang on 05-12-15.
  */
-public class ChartViewExampleActivity extends BaseActivity{
+public class ChartViewExampleActivity extends BaseActivity {
 
     @Bind(R.id.accountSummaryChart)
     ChartView mChartView;
@@ -62,9 +63,9 @@ public class ChartViewExampleActivity extends BaseActivity{
         );
         rvStockMarket.addItemDecoration(itemDecoration);
 
-        mAdapter = new MarketAdapter(new BaseAdapter.OnItemClickListener() {
+        mAdapter = new MarketAdapter(mContext, new BaseAdapterListener() {
             @Override
-            public void onItemClick(BaseAdapter baseAdapter, int position, View v) {
+            public void onItemClicked(RecyclerView.Adapter adapter, RecyclerView.ViewHolder holder, int position) {
                 MarketModel model = mAdapter.getItem(position);
                 Intent intent = new Intent(mContext, MarketDetailActivity.class);
                 intent.putExtra(MarketDetailActivity.EXTRA_MARKET_NAME, model.name);

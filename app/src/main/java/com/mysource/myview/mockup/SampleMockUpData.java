@@ -35,8 +35,7 @@ public class SampleMockUpData {
         List<MarketModel> listData = null;
         try {
             JSONObject jsonObject = new JSONObject(jsonString);
-            Type type = new TypeToken<List<MarketModel>>() {
-            }.getType();
+            Type type = new TypeToken<List<MarketModel>>() {}.getType();
             listData = new Gson().fromJson(jsonObject.getString("stockMarket"), type);
         } catch (JSONException e) {
             e.printStackTrace();
