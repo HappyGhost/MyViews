@@ -3,6 +3,7 @@ package com.mysource.myview.mockup;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.mysource.myview.model.ChartItemModel;
+import com.mysource.myview.model.DemoData;
 import com.mysource.myview.model.MarketModel;
 
 import org.json.JSONException;
@@ -35,7 +36,8 @@ public class SampleMockUpData {
         List<MarketModel> listData = null;
         try {
             JSONObject jsonObject = new JSONObject(jsonString);
-            Type type = new TypeToken<List<MarketModel>>() {}.getType();
+            Type type = new TypeToken<List<MarketModel>>() {
+            }.getType();
             listData = new Gson().fromJson(jsonObject.getString("stockMarket"), type);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -48,5 +50,14 @@ public class SampleMockUpData {
                 MockUpManager.getInstance().getMockJSON(MockUpManager.STOCK_MARKET_DETAIL),
                 MarketModel.class);
         return model;
+    }
+
+    public static List<DemoData> getDemoList() {
+        String jsonString = MockUpManager.getInstance().getMockJSON(MockUpManager.DEMO_LIST);
+        List<DemoData> listData;
+        Type type = new TypeToken<List<DemoData>>() {
+        }.getType();
+        listData = new Gson().fromJson(jsonString, type);
+        return listData;
     }
 }

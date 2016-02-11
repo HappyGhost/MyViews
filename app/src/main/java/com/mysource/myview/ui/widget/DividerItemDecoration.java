@@ -9,6 +9,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.mysource.myview.R;
+
 @SuppressWarnings("SameParameterValue")
 public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
@@ -62,7 +64,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
         final int childCount = parent.getChildCount();
         for (int i = 0; i < childCount; i++) {
-            if(i == mEndLinePos)
+            if (i == mEndLinePos)
                 break;
 
             final View child = parent.getChildAt(i);
@@ -74,7 +76,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
             int rLeft = left;
             int rRight = right;
 
-            if((!mIsFullStartLine || i > 0) && (!mIsEndLineFull || i < childCount - 1)) {
+            if ((!mIsFullStartLine || i > 0) && (!mIsEndLineFull || i < childCount - 1)) {
                 rLeft += mMarginLeft;
                 rRight += mMarginRight;
             }
@@ -91,7 +93,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
         final int childCount = parent.getChildCount();
         for (int i = 0; i < childCount; i++) {
 
-            if(i == mEndLinePos)
+            if (i == mEndLinePos)
                 break;
 
             final View child = parent.getChildAt(i);
@@ -107,14 +109,14 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
     @Override
     public void getItemOffsets(Rect outRect, int itemPosition, RecyclerView parent) {
-        if(mIsShowOffset) {
+        if (mIsShowOffset) {
             if (mOrientation == VERTICAL_LIST) {
                 outRect.set(0, 0, 0, mDivSize);
             } else {
                 outRect.set(0, 0, mDivSize, 0);
             }
         } else {
-            if(itemPosition == 0 && mIsFullStartLine) {
+            if (itemPosition == 0 && mIsFullStartLine) {
                 if (mOrientation == VERTICAL_LIST) {
                     outRect.set(0, 0, 0, mDivSize);
                 } else {
@@ -145,5 +147,23 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
     public void setIsFullStartLine(boolean isFull) {
         mIsFullStartLine = isFull;
+    }
+
+    public static DividerItemDecoration getDefaultDividerItem(Context context) {
+        DividerItemDecoration decoration = new DividerItemDecoration(context, LinearLayoutManager.VERTICAL);
+        decoration.setIsFullEndLine(false);
+        decoration.setIsFullStartLine(false);
+        decoration.setMargin(
+                (int) context.getResources().getDimension(R.dimen.recycler_padding),
+                0, 0, 0
+        );
+        return decoration;
+    }
+
+    public static DividerItemDecoration getFullDividerItem(Context context) {
+        DividerItemDecoration decoration = new DividerItemDecoration(context, LinearLayoutManager.VERTICAL);
+        decoration.setIsFullEndLine(true);
+        decoration.setIsFullStartLine(true);
+        return decoration;
     }
 }

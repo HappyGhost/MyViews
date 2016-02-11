@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Chart View",
+    "description": "The custom view is used to display big chart data and can be tidy chart in a list view"
+  },
+  {
+    "title": "Float Action",
+    "description": "The view customized following float action and support from android 2.3"
+  },
+  {
+    "title": "Cycle animation",
+    "description": "This is simple sample for merry christmas."
+  }
+]
