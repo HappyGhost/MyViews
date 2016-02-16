@@ -7,11 +7,27 @@
       "history": [
         {
           "dateTime": "2015-10-01",
-          "value": 570
+          "value": 470
         },
         {
           "dateTime": "2015-10-02",
           "value": 550
+        },
+        {
+          "dateTime": "2015-10-03",
+          "value": 600
+        },
+        {
+          "dateTime": "2015-10-03",
+          "value": 400
+        },
+        {
+          "dateTime": "2015-10-03",
+          "value": 510
+        },
+        {
+          "dateTime": "2015-10-03",
+          "value": 420
         },
         {
           "dateTime": "2015-10-03",
@@ -45,15 +61,31 @@
       "history": [
         {
           "dateTime": "2015-10-01",
-          "value": 57
+          "value": 470
         },
         {
           "dateTime": "2015-10-02",
-          "value": 40
+          "value": 550
         },
         {
           "dateTime": "2015-10-03",
-          "value": 60
+          "value": 600
+        },
+        {
+          "dateTime": "2015-10-03",
+          "value": 400
+        },
+        {
+          "dateTime": "2015-10-03",
+          "value": 510
+        },
+        {
+          "dateTime": "2015-10-03",
+          "value": 420
+        },
+        {
+          "dateTime": "2015-10-03",
+          "value": 570
         }
       ]
     },
@@ -64,7 +96,7 @@
       "history": [
         {
           "dateTime": "2015-10-01",
-          "value": 570
+          "value": 470
         },
         {
           "dateTime": "2015-10-02",
@@ -73,6 +105,22 @@
         {
           "dateTime": "2015-10-03",
           "value": 600
+        },
+        {
+          "dateTime": "2015-10-03",
+          "value": 400
+        },
+        {
+          "dateTime": "2015-10-03",
+          "value": 510
+        },
+        {
+          "dateTime": "2015-10-03",
+          "value": 420
+        },
+        {
+          "dateTime": "2015-10-03",
+          "value": 570
         }
       ]
     },

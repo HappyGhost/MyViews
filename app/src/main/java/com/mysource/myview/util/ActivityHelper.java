@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.mysource.myview.ui.activity.ChartViewExampleActivity;
+import com.mysource.myview.ui.activity.BasicCoordinatorLayoutActivity;
 import com.mysource.myview.ui.activity.CycleAnimationActivity;
 import com.mysource.myview.ui.activity.FloatActionSampleActivity;
 
@@ -24,6 +25,11 @@ public class ActivityHelper {
 
     public static void openFLoatActionExample(Context context){
         Intent intent = new Intent(context, FloatActionSampleActivity.class);
+        context.startActivity(intent);
+    }
+
+    public static void openBasicCoodinatorActivity(Context context){
+        Intent intent = new Intent(context, BasicCoordinatorLayoutActivity.class);
         context.startActivity(intent);
     }
 }

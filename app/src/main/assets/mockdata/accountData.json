@@ -1,0 +1,110 @@
+{
+  "mid": "4",
+  "code": "00",
+  "accountData": {
+    "accountTitle": "Hello customer!\nBelow are your company Account Snapshot",
+    "carouselData": [
+      {
+        "accountValue": 1265582152,
+        "type": "TOTAL ASSERTS",
+        "currencyCode": "VND"
+      },
+      {
+        "accountValue": 1265582152,
+        "type": "TOTAL ASSERTS",
+        "currencyCode": "VND"
+      },
+      {
+        "accountValue": 1265582152,
+        "type": "TOTAL ASSERTS",
+        "currencyCode": "VND"
+      }
+    ],
+    "localAccounts": [
+      {
+        "accountType": "Current Accounts",
+        "accountList": [
+          {
+            "accountName": "current account #1",
+            "accountNumber": "501-576897-001",
+            "accountType": "Current Account",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 45000000,
+            "currencyCode": "VND"
+          },
+          {
+            "accountName": "current account #2",
+            "accountNumber": "501-576897-001",
+            "accountType": "Current Account",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 5170000000,
+            "currencyCode": "VND"
+          }
+        ]
+      },
+      {
+        "accountType": "Savings Accounts",
+        "accountList": [
+          {
+            "accountName": "Savings account #1",
+            "accountNumber": "501-576897-001",
+            "accountType": "Savings Account",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 45000000,
+            "currencyCode": "VND"
+          },
+          {
+            "accountName": "Savings account #2",
+            "accountNumber": "501-576897-001",
+            "accountType": "Savings Account",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 5170000000,
+            "currencyCode": "VND"
+          }
+        ]
+      },
+      {
+        "accountType": "Loan Accounts",
+        "accountList": [
+          {
+            "accountName": "Loan account #1",
+            "accountNumber": "501-576897-001",
+            "accountType": "Loan Account",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 45000000,
+            "currencyCode": "VND"
+          },
+          {
+            "accountName": "Loan account #2",
+            "accountNumber": "501-576897-001",
+            "accountType": "Loan Account",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 5170000000,
+            "currencyCode": "VND"
+          }
+        ]
+      },
+      {
+        "accountType": "External Accounts",
+        "accountList": [
+          {
+            "accountName": "External account #1",
+            "accountNumber": "501-576897-001",
+            "accountType": "External Account",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 45000000,
+            "currencyCode": "VND"
+          },
+          {
+            "accountName": "External account #2",
+            "accountNumber": "501-576897-001",
+            "accountType": "External Account",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 5170000000,
+            "currencyCode": "VND"
+          }
+        ]
+      }
+    ]
+  }
+}

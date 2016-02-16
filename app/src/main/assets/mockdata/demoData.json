@@ -10,5 +10,9 @@
   {
     "title": "Cycle animation",
     "description": "This is simple sample for merry christmas."
+  },
+  {
+    "title": "Material design: Basic coordinator layout",
+    "description": "This is example code how to use coordinator layout"
   }
 ]

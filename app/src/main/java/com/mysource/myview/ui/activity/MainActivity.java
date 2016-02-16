@@ -47,6 +47,7 @@ public class MainActivity extends BaseActivity {
                         break;
 
                     case 3:
+                        ActivityHelper.openBasicCoodinatorActivity(mContext);
                         break;
                 }
             }

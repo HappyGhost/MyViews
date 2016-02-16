@@ -23,4 +23,8 @@
         <item>QR Code</item>
     </string-array>
 
+    <!-- Material desgin example -->
+    <string name="account_expire_date">Maturity date: </string>
+    <string name="account_available">Available funds</string>
+
 </resources>

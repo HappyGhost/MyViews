@@ -2,6 +2,7 @@ package com.mysource.myview.mockup;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.mysource.myview.model.AccountDashBoardModel;
 import com.mysource.myview.model.ChartItemModel;
 import com.mysource.myview.model.DemoData;
 import com.mysource.myview.model.MarketModel;
@@ -59,5 +60,19 @@ public class SampleMockUpData {
         }.getType();
         listData = new Gson().fromJson(jsonString, type);
         return listData;
+    }
+
+    public static AccountDashBoardModel getAccountDashBoardModel() {
+
+        try {
+            String jsonString = MockUpManager.getInstance().getMockJSON(MockUpManager.ACCOUNT_DATA);
+            JSONObject jsonObject = new JSONObject(jsonString);
+            AccountDashBoardModel listModel = null;
+            listModel = new Gson().fromJson(jsonObject.getString("accountData"), AccountDashBoardModel.class);
+            return listModel;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

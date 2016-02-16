@@ -20,4 +20,11 @@
     <color name="colorChartDownBackground">#FF5538</color>
     <color name="colorChartDownEndBackground">#00FEBAAE</color>
 
+    <!-- Material design example-->
+    <color name="accountHeaderBackgroundColor">#f4f6f8</color>
+    <color name="colorLittleGrey">#979fa6</color>
+
+    <!-- alpha color-->
+    <color name="colorWhite60Percent">#99ffffff</color>
+
 </resources>
