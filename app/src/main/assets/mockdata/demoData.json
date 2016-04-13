@@ -14,5 +14,9 @@
   {
     "title": "Material design: Basic coordinator layout",
     "description": "This is example code how to use coordinator layout"
+  },
+  {
+    "title": "Custom view: bar chart",
+    "description": "The customized bar chart display income and spent of the account"
   }
 ]
