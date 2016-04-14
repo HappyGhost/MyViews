@@ -21,6 +21,10 @@ public class MockUpManager {
     public static final String STOCK_MARKET_DETAIL = "stockMarketDetail.json";
     public static final String DEMO_LIST = "demoData.json";
     public static final String ACCOUNT_DATA = "accountData.json";
+    public static final String CURRENT_ACCOUNT_DETAIL_DATA = "accountDetailData.json";
+    public static final String FD_ACCOUNT_DETAIL_DATA = "accountDetail_FDAccount.json";
+    public static final String GL_ACCOUNT_DETAIL_DATA = "accountDetail_GLAccount.json";
+    public static final String LOAN_ACCOUNT_DETAIL_DATA = "accountDetail_LoanAccount.json";
 
     private MockUpManager() {
 

@@ -58,7 +58,7 @@ public class AccountFragment extends BaseFragment {
         pageIndicator.setViewPager(carouselPager);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        AccountAdapter accountAdapter = new AccountAdapter(mAccountDashBoardModel.getListLocalAccount());
+        AccountAdapter accountAdapter = new AccountAdapter(mAccountDashBoardModel.getLocalAccountList());
         recyclerView.setAdapter(accountAdapter);
     }
 

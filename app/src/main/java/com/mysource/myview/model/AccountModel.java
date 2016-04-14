@@ -7,11 +7,14 @@ import com.google.gson.annotations.SerializedName;
  */
 public class AccountModel implements IModel {
 
-    @SerializedName("accountName")
+    @SerializedName("name")
     String accountName;
 
     @SerializedName("accountNumber")
     String accountNumber;
+
+    @SerializedName("accountType")
+    String accountType;
 
     @SerializedName("endDate")
     String endDate;
@@ -21,6 +24,15 @@ public class AccountModel implements IModel {
 
     @SerializedName("currencyCode")
     String currencyCode;
+
+    @SerializedName("address")
+    String accountAddress;
+
+    @SerializedName("accountTypeNumber")
+    int type;
+
+    @SerializedName("isActive")
+    boolean isActive;
 
     public String getAccountNumber() {
         return accountNumber;
@@ -60,6 +72,38 @@ public class AccountModel implements IModel {
 
     public void setAccountName(String accountName) {
         this.accountName = accountName;
+    }
+
+    public String getAccountAddress() {
+        return accountAddress;
+    }
+
+    public void setAccountAddress(String accountAddress) {
+        this.accountAddress = accountAddress;
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setIsActive(boolean isActive) {
+        this.isActive = isActive;
     }
 
 }

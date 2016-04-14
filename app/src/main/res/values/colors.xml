@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Main color -->
+    <color name="white">#ffffff</color>
+
     <!-- Chart View -->
     <color name="colorBlueBackground">#037ab4</color>
     <color name="blue_light">#008fd5</color>
@@ -26,5 +29,18 @@
 
     <!-- alpha color-->
     <color name="colorWhite60Percent">#99ffffff</color>
+    <color name="colorWhite80Percent">#ccffffff</color>
+
+    <!-- Bar char example -->
+    <color name="colorChartAccountEndBackground">#00dbe8ee</color>
+    <dimen name="account_detail_carousel_loan_account">180dp</dimen>
+    <color name="colorGreyBackground">#EDEDED</color>
+    <color name="colorBlack">#333333</color>
+    <color name="colorMoreInfoGreyBackground">#F4F6F8</color>
+    <color name="colorGreySegment">#848484</color>
+    <color name="colorDivLineLighter">#e2e2e2</color>
+    <color name="colorPrimaryHover">#1a000000</color>
+    <color name="rateIncreaseColor">#8ec767</color>
+    <color name="colorSemiBlack90Percent">#e5333333</color>
 
 </resources>

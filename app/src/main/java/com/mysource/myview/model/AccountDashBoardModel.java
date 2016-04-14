@@ -16,7 +16,10 @@ public class AccountDashBoardModel implements IModel {
     List<AccountCarouselModel> carouselModel;
 
     @SerializedName("localAccounts")
-    List<GroupAccountModel> listLocalAccount;
+    List<GroupAccountModel> localAccountList;
+
+    @SerializedName("GlobalAccounts")
+    List<GlobalAccountModel> globalAccountList;
 
     public String getDashboardTitle() {
         return dashboardTitle;
@@ -34,11 +37,19 @@ public class AccountDashBoardModel implements IModel {
         this.carouselModel = carouselModel;
     }
 
-    public List<GroupAccountModel> getListLocalAccount() {
-        return listLocalAccount;
+    public List<GroupAccountModel> getLocalAccountList() {
+        return localAccountList;
     }
 
-    public void setListLocalAccount(List<GroupAccountModel> listLocalAccount) {
-        this.listLocalAccount = listLocalAccount;
+    public void setLocalAccountList(List<GroupAccountModel> localAccountList) {
+        this.localAccountList = localAccountList;
+    }
+
+    public List<GlobalAccountModel> getGlobalAccountList() {
+        return globalAccountList;
+    }
+
+    public void setGlobalAccountList(List<GlobalAccountModel> globalAccountList) {
+        this.globalAccountList = globalAccountList;
     }
 }

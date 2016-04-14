@@ -7,4 +7,16 @@
     <dimen name="text_market_detail_index">40sp</dimen>
     <dimen name="text_market_detail_index_fraction">26sp</dimen>
     <dimen name="circle_indicator_radius_size">4dp</dimen>
+
+    <dimen name="text_12_size">12sp</dimen>
+    <dimen name="text_13_size">13sp</dimen>
+    <dimen name="text_15_size">15sp</dimen>
+    <dimen name="account_detail_carousel_default">220dp</dimen>
+    <dimen name="text_16_size">16sp</dimen>
+    <dimen name="corner_segment">4dp</dimen>
+    <dimen name="text_20_size">20sp</dimen>
+    <dimen name="text_greeting">17sp</dimen>
+    <dimen name="text_view_drawable_padding">15dp</dimen>
+    <dimen name="text_title">17sp</dimen>
+
 </resources>

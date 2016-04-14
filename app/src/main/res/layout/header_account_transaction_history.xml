@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingTop="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvAccountId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/app_name"
+                android:textColor="@color/colorSemiBlack"
+                android:textSize="@dimen/text_greeting"/>
+
+            <TextView
+                android:layout_width="63dp"
+                android:layout_height="24dp"
+                android:background="@drawable/rectangle_active"
+                android:gravity="center"
+                android:text="@string/account_detail_active_status"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvAccountName"
+            style="@style/MediumTextGreyRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/app_name"/>
+
+        <TextView
+            android:id="@+id/tvCompanyName"
+            style="@style/MediumTextGreyRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/app_name"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvAvailableLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_available"
+                android:textColor="@color/colorTextLighter"
+                android:textSize="@dimen/text_13_size"/>
+
+            <TextView
+                android:id="@+id/tvAccountAvailableFund"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:textColor="@color/colorSemiBlack"
+                android:textSize="@dimen/text_20_size"/>
+
+            <TextView
+                android:layout_width="28dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/vnd"
+                android:textColor="@color/colorSemiBlack"
+                android:textSize="@dimen/text_12_size"/>
+        </LinearLayout>
+
+        <View
+            style="@style/horizontalDiv"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvBalanceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_balance"
+                android:textColor="@color/colorTextLighter"
+                android:textSize="@dimen/text_13_size"/>
+
+            <TextView
+                android:id="@+id/tvBalance"
+                style="@style/MediumTextGreyRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:gravity="right"/>
+
+            <TextView
+                android:layout_width="28dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/vnd"
+                android:textColor="@color/colorTextLighter"
+                android:textSize="@dimen/text_12_size"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnExtendedAccountInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvDescriptionLabel1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_interest_rate"
+                    android:textColor="@color/colorTextLighter"
+                    android:textSize="@dimen/text_13_size"/>
+
+                <TextView
+                    android:id="@+id/tvDescription1"
+                    style="@style/MediumTextGreyRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:gravity="right"/>
+
+                <TextView
+                    android:id="@+id/tvDescriptionCurrency1"
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/symbol_percent"
+                    android:textColor="@color/colorTextLighter"
+                    android:textSize="@dimen/text_12_size"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvDescriptionLabel2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_compound_interest"
+                    android:textColor="@color/colorTextLighter"
+                    android:textSize="@dimen/text_13_size"/>
+
+                <TextView
+                    android:id="@+id/tvDescription2"
+                    style="@style/MediumTextGreyRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:gravity="right"/>
+
+                <TextView
+                    android:id="@+id/tvDescriptionCurrency2"
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/vnd"
+                    android:textColor="@color/colorTextLighter"
+                    android:textSize="@dimen/text_12_size"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnViewMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/tvViewMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/account_detail_text_view_more"
+                android:textColor="@color/blue_light"
+                android:textSize="@dimen/text_12_size"/>
+
+            <ImageView
+                android:id="@+id/imViewMore"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="12dp"
+                android:src="@drawable/icon_arrow_down"/>
+        </LinearLayout>
+
+
+        <View style="@style/horizontalDiv"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/colorGreyBackground"/>
+
+        <View style="@style/horizontalDiv"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/account_detail_label_transaction_history"
+                    android:textColor="@color/colorLittleGrey"
+                    android:textSize="@dimen/text_normal"/>
+
+                <LinearLayout
+                    android:id="@+id/lnFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/image_button_selector"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="14dp"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/icon_filter_blue"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/account_detail_text_filter"
+                        android:textColor="@color/blue_light"
+                        android:textSize="@dimen/text_normal"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnDateFilter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <View style="@style/horizontalDivLight"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/lnDateFilterFrom"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/image_button_selector"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/icon_calendar"
+                            android:drawablePadding="10dp"
+                            android:gravity="top"
+                            android:text="@string/text_from"
+                            android:textColor="@color/colorTextLighter"
+                            android:textSize="@dimen/text_13_size"/>
+
+                        <TextView
+                            android:id="@+id/tvFromDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="6dp"
+                            android:hint="@string/account_detail_filter_date_hint"
+                            android:textColor="@color/blue_light"
+                            android:textColorHint="@color/blue_light"
+                            android:textSize="@dimen/text_normal"/>
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorDivLineLighter"/>
+
+                    <LinearLayout
+                        android:id="@+id/lnDateFilterTo"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/image_button_selector"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/icon_calendar"
+                            android:drawablePadding="10dp"
+                            android:gravity="top"
+                            android:text="@string/text_to"
+                            android:textColor="@color/colorTextLighter"
+                            android:textSize="@dimen/text_13_size"/>
+
+                        <TextView
+                            android:id="@+id/tvToDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="6dp"
+                            android:hint="@string/account_detail_filter_date_hint"
+                            android:textColor="@color/blue_light"
+                            android:textColorHint="@color/colorTextLighter"
+                            android:textSize="@dimen/text_normal"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View style="@style/horizontalDivLight"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnSegmentControl"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/segment_grey_border_background"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvAllTab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/segment_grey_left_selector"
+                    android:gravity="center"
+                    android:text="@string/account_detail_text_segment_all_tab"
+                    android:textSize="@dimen/text_normal"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorGreySegment"/>
+
+                <TextView
+                    android:id="@+id/tvIncomeTab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/segment_grey_mid_selector"
+                    android:gravity="center"
+                    android:text="@string/account_detail_text_segment_income_tab"
+                    android:textSize="@dimen/text_normal"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorGreySegment"/>
+
+                <TextView
+                    android:id="@+id/tvExpenseTab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/segment_grey_right_selector"
+                    android:gravity="center"
+                    android:text="@string/account_detail_text_segment_expense_tab"
+                    android:textSize="@dimen/text_normal"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

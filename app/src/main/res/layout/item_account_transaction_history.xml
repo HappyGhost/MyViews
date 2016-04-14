@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/lnShortItem"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="@drawable/white_background_selector"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvTransactionName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:text="@string/app_name"
+                android:textColor="@color/colorSemiBlack"
+                android:textSize="@dimen/text_16_size"/>
+
+            <ImageView
+                android:id="@+id/imType"
+                android:layout_width="9dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/plus"/>
+
+            <TextView
+                android:id="@+id/tvTransactionAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="7dp"
+                android:gravity="right"
+                android:minWidth="60dp"
+                android:text="@string/app_name"
+                android:textColor="@color/colorSemiBlack"
+                android:textSize="@dimen/text_normal"/>
+
+            <TextView
+                android:id="@+id/tvCurrencyCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vnd"
+                android:textColor="@color/colorSemiBlack"
+                android:textSize="@dimen/text_12_size"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/colorLittleGrey"
+            android:textSize="@dimen/text_13_size"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/lnTriangle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/lnShortItem">
+
+        <View
+            android:id="@+id/vDiv"
+            style="@style/horizontalDiv"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"/>
+
+        <ImageView
+            android:id="@+id/imTriangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="14dp"
+            android:src="@drawable/triangle_2"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lnMoreInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lnTriangle"
+        android:background="@color/colorMoreInfoGreyBackground"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/lnDefaultLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lnSender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/account_detail_label_sender"
+                    android:textColor="@color/colorTextLighter"
+                    android:textSize="@dimen/text_13_size"/>
+
+                <TextView
+                    android:id="@+id/tvSender"
+                    style="@style/MediumTextBlackValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:gravity="right"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnValueDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/account_detail_label_value_date"
+                    android:textColor="@color/colorTextLighter"
+                    android:textSize="@dimen/text_13_size"/>
+
+                <TextView
+                    android:id="@+id/tvValueDate"
+                    style="@style/MediumTextBlackValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:gravity="right"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnBalance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/account_detail_label_balance"
+                    android:textColor="@color/colorTextLighter"
+                    android:textSize="@dimen/text_13_size"/>
+
+                <TextView
+                    android:id="@+id/tvBalance"
+                    style="@style/MediumTextBlackValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:gravity="right"/>
+
+                <TextView
+                    android:id="@+id/tvBalanceCurrency"
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="@string/vnd"
+                    android:textColor="@color/colorSemiBlack"
+                    android:textSize="@dimen/text_12_size"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorSemiBlack"
+                android:textSize="@dimen/text_13_size"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnLoanLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lnPrinciplePayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/account_detail_principle_payment_label"
+                    android:textColor="@color/colorTextLighter"
+                    android:textSize="@dimen/text_13_size"/>
+
+                <TextView
+                    android:id="@+id/tvPrinciplePayment"
+                    style="@style/MediumTextBlackValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:gravity="right"/>
+
+                <TextView
+                    android:id="@+id/tvPrinciplePaymentCurrency"
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="@string/vnd"
+                    android:textColor="@color/colorSemiBlack"
+                    android:textSize="@dimen/text_12_size"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/account_detail_principle_payment_label"
+                    android:textColor="@color/colorTextLighter"
+                    android:textSize="@dimen/text_13_size"/>
+
+                <TextView
+                    android:id="@+id/tvPrincipleInterest"
+                    style="@style/MediumTextBlackValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:gravity="right"/>
+
+                <TextView
+                    android:id="@+id/tvPrincipleInterestCurrency"
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="@string/vnd"
+                    android:textColor="@color/colorSemiBlack"
+                    android:textSize="@dimen/text_12_size"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/account_detail_principle_payment_label"
+                    android:textColor="@color/colorTextLighter"
+                    android:textSize="@dimen/text_13_size"/>
+
+                <TextView
+                    android:id="@+id/tvDelinquentInterest"
+                    style="@style/MediumTextBlackValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:gravity="right"/>
+
+                <TextView
+                    android:id="@+id/tvDelinquentInterestCurrency"
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="@string/vnd"
+                    android:textColor="@color/colorSemiBlack"
+                    android:textSize="@dimen/text_12_size"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

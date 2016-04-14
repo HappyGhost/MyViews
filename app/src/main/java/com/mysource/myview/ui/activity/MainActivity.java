@@ -39,7 +39,7 @@ public class MainActivity extends BaseActivity {
                         break;
 
                     case 1:
-                        ActivityHelper.openFLoatActionExample(mContext);
+                        ActivityHelper.openFloatActionExample(mContext);
                         break;
 
                     case 2:
@@ -48,6 +48,10 @@ public class MainActivity extends BaseActivity {
 
                     case 3:
                         ActivityHelper.openBasicCoodinatorActivity(mContext);
+                        break;
+
+                    case 4:
+                        ActivityHelper.openAccountDetailActivity(mContext);
                         break;
                 }
             }

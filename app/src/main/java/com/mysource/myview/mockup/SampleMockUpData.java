@@ -4,7 +4,11 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.mysource.myview.model.AccountDashBoardModel;
 import com.mysource.myview.model.ChartItemModel;
+import com.mysource.myview.model.CurrentAccountDetailModel;
 import com.mysource.myview.model.DemoData;
+import com.mysource.myview.model.FDAccountDetailModel;
+import com.mysource.myview.model.GLAccountDetailModel;
+import com.mysource.myview.model.LoanAccountDetailModel;
 import com.mysource.myview.model.MarketModel;
 
 import org.json.JSONException;
@@ -68,8 +72,64 @@ public class SampleMockUpData {
             String jsonString = MockUpManager.getInstance().getMockJSON(MockUpManager.ACCOUNT_DATA);
             JSONObject jsonObject = new JSONObject(jsonString);
             AccountDashBoardModel listModel = null;
-            listModel = new Gson().fromJson(jsonObject.getString("accountData"), AccountDashBoardModel.class);
+            listModel = new Gson().fromJson(jsonObject.getString("accounts"), AccountDashBoardModel.class);
             return listModel;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static CurrentAccountDetailModel getCurrentAccountDetailData() {
+
+        try {
+            String jsonString = MockUpManager.getInstance().getMockJSON(MockUpManager.CURRENT_ACCOUNT_DETAIL_DATA);
+            JSONObject jsonObject = new JSONObject(jsonString);
+            CurrentAccountDetailModel model = null;
+            model = new Gson().fromJson(jsonObject.getString("accountDetailData"), CurrentAccountDetailModel.class);
+            return model;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static FDAccountDetailModel getFDAccountDetail() {
+
+        try {
+            String jsonString = MockUpManager.getInstance().getMockJSON(MockUpManager.FD_ACCOUNT_DETAIL_DATA);
+            JSONObject jsonObject = new JSONObject(jsonString);
+            FDAccountDetailModel model = null;
+            model = new Gson().fromJson(jsonObject.getString("accountDetailData"), FDAccountDetailModel.class);
+            return model;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static GLAccountDetailModel getGLAccountDetail() {
+
+        try {
+            String jsonString = MockUpManager.getInstance().getMockJSON(MockUpManager.GL_ACCOUNT_DETAIL_DATA);
+            JSONObject jsonObject = new JSONObject(jsonString);
+            GLAccountDetailModel model = null;
+            model = new Gson().fromJson(jsonObject.getString("accountDetailData"), GLAccountDetailModel.class);
+            return model;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static LoanAccountDetailModel getLoanAccountDetail() {
+
+        try {
+            String jsonString = MockUpManager.getInstance().getMockJSON(MockUpManager.LOAN_ACCOUNT_DETAIL_DATA);
+            JSONObject jsonObject = new JSONObject(jsonString);
+            LoanAccountDetailModel model = null;
+            model = new Gson().fromJson(jsonObject.getString("accountDetailData"), LoanAccountDetailModel.class);
+            return model;
         } catch (JSONException e) {
             e.printStackTrace();
         }

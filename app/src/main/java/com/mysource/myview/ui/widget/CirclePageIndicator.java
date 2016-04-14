@@ -106,7 +106,7 @@ public class CirclePageIndicator extends View implements PageIndicator {
 
         Drawable background = a.getDrawable(R.styleable.CirclePageIndicator_android_background);
         if (background != null) {
-          setBackgroundDrawable(background);
+            setBackgroundDrawable(background);
         }
 
         a.recycle();
@@ -377,6 +377,10 @@ public class CirclePageIndicator extends View implements PageIndicator {
         mViewPager = view;
         mViewPager.setOnPageChangeListener(this);
         invalidate();
+    }
+
+    public boolean isViewPagerAttached(){
+        return mViewPager != null;
     }
 
     @Override

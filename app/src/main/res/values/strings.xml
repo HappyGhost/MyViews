@@ -23,8 +23,47 @@
         <item>QR Code</item>
     </string-array>
 
-    <!-- Material desgin example -->
+    <!-- Material design example -->
     <string name="account_expire_date">Maturity date: </string>
     <string name="account_available">Available funds</string>
+
+    <!-- Bar chart example-->
+    <string name="bar_chart_label_income">Income</string>
+    <string name="bar_chart_label_spent">Spent</string>
+    <string name="bar_chart_label_income_uppercase">INCOME</string>
+    <string name="bar_chart_label_spent_uppercase">SPENT</string>
+    <string name="bar_chart_row_title_format">%1$d%2$s</string>
+    <string name="chart_text_1_week">1W</string>
+    <string name="chart_text_1_month">1M</string>
+    <string name="vnd">VND</string>
+    <string name="account_detail_filter_date_hint">Select date</string>
+    <string name="account_detail_label_sender">Sender</string>
+    <string name="account_detail_label_value_date">Value date</string>
+    <string name="account_detail_label_balance">Balance</string>
+    <string name="account_detail_format_deposit_date">Deposit date: %s</string>
+    <string name="account_detail_format_latest_transaction_date">Latest transaction date: %s</string>
+    <string name="account_detail_total_balance_label">Total balance</string>
+    <string name="account_detail_opening_day_balance_label">Opening day balance</string>
+    <string name="account_detail_compound_income_label">Compound income</string>
+    <string name="account_detail_interest_label">Interest</string>
+    <string name="account_detail_principle_label">Principle</string>
+    <string name="account_detail_principle_payment_label">Principle payment</string>
+    <string name="account_detail_active_status">Active</string>
+    <string name="label_available">Available</string>
+    <string name="label_balance">Balance</string>
+    <string name="label_interest_rate">Interest rate</string>
+    <string name="symbol_percent">%</string>
+    <string name="label_compound_interest">Compound interest</string>
+    <string name="account_detail_popup_value_format">Balance: %1$s %2$s</string>
+    <string name="account_detail_text_view_more">View more</string>
+    <string name="account_detail_text_view_less">View less</string>
+    <string name="account_detail_text_segment_all_tab">All</string>
+    <string name="account_detail_text_segment_income_tab">Income</string>
+    <string name="account_detail_text_segment_expense_tab">Expense</string>
+    <string name="account_detail_label_transaction_history">Transaction History</string>
+    <string name="account_detail_text_filter">Filter</string>
+    <string name="text_from">From</string>
+    <string name="text_to">To</string>
+    <string name="empty_string">empty</string>
 
 </resources>

@@ -1,0 +1,238 @@
+{
+  "mid": "4",
+  "code": "00",
+  "accountDetailData": {
+    "monthData": {
+      "accountChartData": [
+        {
+          "dateTime": "Aug 15",
+          "value": 60000000,
+          "shouldDisplay": false
+        },
+        {
+          "dateTime": "Aug 17",
+          "value": 70000000,
+          "shouldDisplay": false
+        },
+        {
+          "dateTime": "Aug 19",
+          "value": 80000000,
+          "shouldDisplay": false
+        },
+        {
+          "dateTime": "Aug 26",
+          "value": 60000000,
+          "shouldDisplay": true
+        },
+        {
+          "dateTime": "Aug 27",
+          "value": 70000000,
+          "shouldDisplay": false
+        },
+        {
+          "dateTime": "Sep 4",
+          "value": 70000000,
+          "shouldDisplay": false
+        },
+        {
+          "dateTime": "Sep 4",
+          "value": 40000000,
+          "shouldDisplay": false
+        },
+        {
+          "dateTime": "Sep 26",
+          "value": 90000000,
+          "shouldDisplay": true
+        },
+        {
+          "dateTime": "Oct 15",
+          "value": 40000000,
+          "shouldDisplay": false
+        },
+        {
+          "dateTime": "Oct 20",
+          "value": 90000000,
+          "shouldDisplay": false
+        },
+        {
+          "dateTime": "Oct 26",
+          "value": 99000000,
+          "shouldDisplay": false
+        },
+        {
+          "dateTime": "Oct 26",
+          "value": 55000000,
+          "shouldDisplay": true
+        },
+        {
+          "dateTime": "Oct 30",
+          "value": 99000000,
+          "shouldDisplay": false
+        }
+      ],
+      "incomeChartData": [
+        {
+          "label": "01 JUNE",
+          "income": 1855166120,
+          "spent": 730000000
+        },
+        {
+          "label": "08 JUNE",
+          "income": 35516612,
+          "spent": 234000000
+        },
+        {
+          "label": "15 JUNE",
+          "income": 1553416612,
+          "spent": 723400000
+        },
+        {
+          "label": "22 JUNE",
+          "income": 865516612,
+          "spent": 173000000
+        }
+      ]
+    },
+    "weekData": {
+      "accountChartData": [
+        {
+          "dateTime": "Jun 01",
+          "value": 60000000,
+          "shouldDisplay": true
+        },
+        {
+          "dateTime": "Jun 02",
+          "value": 70000000,
+          "shouldDisplay": false
+        },
+        {
+          "dateTime": "Jun 03",
+          "value": 80000000,
+          "shouldDisplay": true
+        },
+        {
+          "dateTime": "Jun 04",
+          "value": 60000000,
+          "shouldDisplay": false
+        },
+        {
+          "dateTime": "Jun 05",
+          "value": 70000000,
+          "shouldDisplay": true
+        },
+        {
+          "dateTime": "Jun 06",
+          "value": 70000000,
+          "shouldDisplay": false
+        },
+        {
+          "dateTime": "Jun 07",
+          "value": 40000000,
+          "shouldDisplay": true
+        },
+        {
+          "dateTime": "Jun 08",
+          "value": 90000000,
+          "shouldDisplay": false
+        }
+      ],
+      "incomeChartData": [
+        {
+          "label": "01 JUNE",
+          "income": 185516612,
+          "spent": 7000000
+        },
+        {
+          "label": "03 JUNE",
+          "income": 85516612,
+          "spent": 73000000
+        },
+        {
+          "label": "05 JUNE",
+          "income": 356516612,
+          "spent": 73000000
+        },
+        {
+          "label": "08 JUNE",
+          "income": 34516612,
+          "spent": 89000000
+        }
+      ]
+    },
+    "accountInfo": {
+      "accountNumber": "501-576897-001",
+      "name": "Phan Quang",
+      "address": "NHTMCPCT TP HANOI",
+      "depositDate": "2015-12-25T14:19:03+00:00",
+      "currencyCode": "VND",
+      "balance": 5000000000,
+      "interestRate": 10.4,
+      "compoundInterest": 247682,
+      "isActive": "YES",
+      "accountType": "Savings Account",
+      "totalBalance": 5085000000
+    },
+    "transactionHistory": [
+      {
+        "transactionName": "CK Ngoai He Thong",
+        "transactionAmount": -1000000,
+        "transactionCurrencyCode": "VND",
+        "transactionDate": "2015-11-24T14:19:03+00:00",
+        "sender": "Marketing Co.",
+        "valueDate": "2015-11-24T14:19:03+00:00",
+        "balance": 4247000000,
+        "description": "Trf p/ NCLI40 00985224 Transfer from***"
+      },
+      {
+        "transactionName": "Thu Chi Ho CA",
+        "transactionAmount": -2924000,
+        "transactionCurrencyCode": "VND",
+        "transactionDate": "2015-11-11T14:19:03+00:00",
+        "sender": "Marketing Co.",
+        "valueDate": "2015-11-24T14:19:03+00:00",
+        "balance": 4247000000,
+        "description": "Trf p/ NCLI40 00985224 Transfer from***"
+      },
+      {
+        "transactionName": "CK Ngoai He Thong",
+        "transactionAmount": 1500000,
+        "transactionCurrencyCode": "VND",
+        "transactionDate": "2015-11-04T14:19:03+00:00",
+        "sender": "Marketing Co.",
+        "valueDate": "2015-11-24T14:19:03+00:00",
+        "balance": 4247000000,
+        "description": "Trf p/ NCLI40 00985224 Transfer from***"
+      },
+      {
+        "transactionName": "Giao Dich Ghi Co",
+        "transactionAmount": 2255000,
+        "transactionCurrencyCode": "VND",
+        "transactionDate": "2015-11-04T14:19:03+00:00",
+        "sender": "Marketing Co.",
+        "valueDate": "2015-11-24T14:19:03+00:00",
+        "balance": 4247000000,
+        "description": "Trf p/ NCLI40 00985224 Transfer from***"
+      },
+      {
+        "transactionName": "CK Ngoai He Thong",
+        "transactionAmount": 1500000,
+        "transactionCurrencyCode": "VND",
+        "transactionDate": "2015-10-30T14:19:03+00:00",
+        "sender": "Marketing Co.",
+        "valueDate": "2015-11-24T14:19:03+00:00",
+        "balance": 4247000000,
+        "description": "Trf p/ NCLI40 00985224 Transfer from***"
+      },
+      {
+        "transactionName": "Giao Dich Ghi Co",
+        "transactionAmount": 2255000,
+        "transactionCurrencyCode": "VND",
+        "transactionDate": "2015-10-25T14:19:03+00:00",
+        "sender": "Marketing Co.",
+        "valueDate": "2015-11-24T14:19:03+00:00",
+        "balance": 4247000000,
+        "description": "Trf p/ NCLI40 00985224 Transfer from***"
+      }
+    ]
+  }
+}

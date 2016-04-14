@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <LinearLayout
+            android:id="@+id/lnNote"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:drawableLeft="@drawable/dot_income"
+                android:drawablePadding="5dp"
+                android:text="@string/bar_chart_label_income"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_12_size"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/dot_pending"
+                android:drawablePadding="5dp"
+                android:text="@string/bar_chart_label_spent"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_12_size"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnMoreInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvIncomeMoney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_15_size"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bar_chart_label_income_uppercase"
+                    android:textColor="@color/colorWhite80Percent"
+                    android:textSize="@dimen/text_12_size"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="#33ffffff"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvSpentMoney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_15_size"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bar_chart_label_spent_uppercase"
+                    android:textColor="@color/colorWhite80Percent"
+                    android:textSize="@dimen/text_12_size"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvRow3"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/app_name"
+                    android:textColor="@color/colorWhite80Percent"
+                    android:textSize="@dimen/text_12_size"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/dash_line_horizontal"
+                    android:layerType="software"
+                    tools:ignore="UnusedAttribute"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvRow2"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/app_name"
+                    android:textColor="@color/colorWhite80Percent"
+                    android:textSize="@dimen/text_12_size"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/dash_line_horizontal"
+                    android:layerType="software"
+                    tools:ignore="UnusedAttribute"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvRow1"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/app_name"
+                    android:textColor="@color/colorWhite80Percent"
+                    android:textSize="@dimen/text_12_size"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center_vertical"
+                    android:layerType="software"
+                    android:src="@drawable/dash_line_horizontal"
+                    tools:ignore="UnusedAttribute"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:id="@+id/rlCol1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/bar_chart_item_selector"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
+
+                    <LinearLayout
+                        android:id="@+id/lnIncomeSpentChart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="40dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imIncomeCol1"
+                            android:layout_width="6dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="bottom"
+                            android:layout_marginRight="6dp"
+                            android:background="@drawable/chart_bar_income_rectangle"/>
+
+                        <ImageView
+                            android:id="@+id/imSpentCol1"
+                            android:layout_width="6dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/chart_bar_spend_rectangle"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvCol1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:textColor="@color/colorWhite80Percent"
+                        android:textSize="@dimen/text_12_size"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:id="@+id/rlCol2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/bar_chart_item_selector"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="40dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imIncomeCol2"
+                            android:layout_width="6dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="bottom"
+                            android:layout_marginRight="6dp"
+                            android:background="@drawable/chart_bar_income_rectangle"/>
+
+                        <ImageView
+                            android:id="@+id/imSpentCol2"
+                            android:layout_width="6dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/chart_bar_spend_rectangle"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvCol2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:textColor="@color/colorWhite80Percent"
+                        android:textSize="@dimen/text_12_size"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:id="@+id/rlCol3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/bar_chart_item_selector"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="40dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imIncomeCol3"
+                            android:layout_width="6dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="bottom"
+                            android:layout_marginRight="6dp"
+                            android:background="@drawable/chart_bar_income_rectangle"/>
+
+                        <ImageView
+                            android:id="@+id/imSpentCol3"
+                            android:layout_width="6dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/chart_bar_spend_rectangle"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvCol3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:textColor="@color/colorWhite80Percent"
+                        android:textSize="@dimen/text_12_size"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:id="@+id/rlCol4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/bar_chart_item_selector"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="40dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imIncomeCol4"
+                            android:layout_width="6dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="bottom"
+                            android:layout_marginRight="6dp"
+                            android:background="@drawable/chart_bar_income_rectangle"/>
+
+                        <ImageView
+                            android:id="@+id/imSpentCol4"
+                            android:layout_width="6dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/chart_bar_spend_rectangle"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvCol4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:textColor="@color/colorWhite80Percent"
+                        android:textSize="@dimen/text_12_size"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

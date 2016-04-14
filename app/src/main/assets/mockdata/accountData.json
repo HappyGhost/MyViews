@@ -1,23 +1,23 @@
 {
   "mid": "4",
   "code": "00",
-  "accountData": {
+  "accounts": {
     "accountTitle": "Hello customer!\nBelow are your company Account Snapshot",
     "carouselData": [
       {
         "accountValue": 1265582152,
-        "type": "TOTAL ASSERTS",
-        "currencyCode": "VND"
+        "currencyCode": "VND",
+        "type": "TOTAL ASSETS"
       },
       {
         "accountValue": 1265582152,
-        "type": "TOTAL ASSERTS",
-        "currencyCode": "VND"
+        "currencyCode": "VND",
+        "type": "TOTAL ASSETS"
       },
       {
         "accountValue": 1265582152,
-        "type": "TOTAL ASSERTS",
-        "currencyCode": "VND"
+        "currencyCode": "VND",
+        "type": "TOTAL ASSETS"
       }
     ],
     "localAccounts": [
@@ -25,17 +25,73 @@
         "accountType": "Current Accounts",
         "accountList": [
           {
-            "accountName": "current account #1",
-            "accountNumber": "501-576897-001",
             "accountType": "Current Account",
+            "accountTypeNumber": 1,
+            "accountNumber": "501-576897-001",
             "endDate": "2015-12-25T22:53:03+00:00",
             "availableMoney": 45000000,
             "currencyCode": "VND"
           },
           {
-            "accountName": "current account #2",
-            "accountNumber": "501-576897-001",
             "accountType": "Current Account",
+            "accountTypeNumber": 1,
+            "accountNumber": "501-576897-001",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 5170000000,
+            "currencyCode": "VND"
+          },
+          {
+            "accountType": "Current Account",
+            "accountTypeNumber": 1,
+            "accountNumber": "501-576897-001",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 5170000000,
+            "currencyCode": "VND"
+          },
+          {
+            "accountType": "Current Account",
+            "accountTypeNumber": 1,
+            "accountNumber": "501-576897-001",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 5170000000,
+            "currencyCode": "VND"
+          },
+          {
+            "accountType": "Current Account",
+            "accountTypeNumber": 1,
+            "accountNumber": "501-576897-001",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 5170000000,
+            "currencyCode": "VND"
+          },
+          {
+            "accountType": "Current Account",
+            "accountTypeNumber": 1,
+            "accountNumber": "501-576897-001",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 5170000000,
+            "currencyCode": "VND"
+          },
+          {
+            "accountType": "Current Account",
+            "accountTypeNumber": 1,
+            "accountNumber": "501-576897-001",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 5170000000,
+            "currencyCode": "VND"
+          },
+          {
+            "accountType": "Current Account",
+            "accountTypeNumber": 1,
+            "accountNumber": "501-576897-001",
+            "endDate": "2015-12-25T22:53:03+00:00",
+            "availableMoney": 5170000000,
+            "currencyCode": "VND"
+          },
+          {
+            "accountType": "Current Account",
+            "accountTypeNumber": 1,
+            "accountNumber": "501-576897-001",
             "endDate": "2015-12-25T22:53:03+00:00",
             "availableMoney": 5170000000,
             "currencyCode": "VND"
@@ -43,20 +99,20 @@
         ]
       },
       {
-        "accountType": "Savings Accounts",
+        "accountType": "FD Accounts",
         "accountList": [
           {
-            "accountName": "Savings account #1",
+            "accountType": "FD Account",
+            "accountTypeNumber": 2,
             "accountNumber": "501-576897-001",
-            "accountType": "Savings Account",
             "endDate": "2015-12-25T22:53:03+00:00",
             "availableMoney": 45000000,
             "currencyCode": "VND"
           },
           {
-            "accountName": "Savings account #2",
+            "accountType": "FD Account",
+            "accountTypeNumber": 2,
             "accountNumber": "501-576897-001",
-            "accountType": "Savings Account",
             "endDate": "2015-12-25T22:53:03+00:00",
             "availableMoney": 5170000000,
             "currencyCode": "VND"
@@ -67,17 +123,17 @@
         "accountType": "Loan Accounts",
         "accountList": [
           {
-            "accountName": "Loan account #1",
-            "accountNumber": "501-576897-001",
             "accountType": "Loan Account",
+            "accountTypeNumber": 4,
+            "accountNumber": "501-576897-001",
             "endDate": "2015-12-25T22:53:03+00:00",
             "availableMoney": 45000000,
             "currencyCode": "VND"
           },
           {
-            "accountName": "Loan account #2",
-            "accountNumber": "501-576897-001",
             "accountType": "Loan Account",
+            "accountTypeNumber": 4,
+            "accountNumber": "501-576897-001",
             "endDate": "2015-12-25T22:53:03+00:00",
             "availableMoney": 5170000000,
             "currencyCode": "VND"
@@ -85,23 +141,287 @@
         ]
       },
       {
-        "accountType": "External Accounts",
+        "accountType": "GL Accounts",
         "accountList": [
           {
-            "accountName": "External account #1",
+            "accountType": "GL Account",
+            "accountTypeNumber": 3,
             "accountNumber": "501-576897-001",
-            "accountType": "External Account",
             "endDate": "2015-12-25T22:53:03+00:00",
             "availableMoney": 45000000,
             "currencyCode": "VND"
           },
           {
-            "accountName": "External account #2",
+            "accountType": "GL Account",
+            "accountTypeNumber": 3,
             "accountNumber": "501-576897-001",
-            "accountType": "External Account",
             "endDate": "2015-12-25T22:53:03+00:00",
             "availableMoney": 5170000000,
             "currencyCode": "VND"
+          }
+        ]
+      }
+    ],
+    "GlobalAccounts": [
+      {
+        "city": "Ho Chi Minh City",
+        "cityAccountItems": [
+          {
+            "company": "Cheerios",
+            "accountList": [
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 45000000,
+                "currencyCode": "VND"
+              },
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 5170000000,
+                "currencyCode": "VND"
+              },
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 5170000000,
+                "currencyCode": "VND"
+              }
+            ]
+          },
+          {
+            "company": "Cini Minis",
+            "accountList": [
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 45000000,
+                "currencyCode": "VND"
+              },
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 5170000000,
+                "currencyCode": "VND"
+              }
+            ]
+          },
+          {
+            "company": "Bonka",
+            "accountList": [
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 45000000,
+                "currencyCode": "VND"
+              },
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 5170000000,
+                "currencyCode": "VND"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "city": "Ha Noi City",
+        "cityAccountItems": [
+          {
+            "company": "Best seller",
+            "accountList": [
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 45000000,
+                "currencyCode": "VND"
+              },
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 5170000000,
+                "currencyCode": "VND"
+              }
+            ]
+          },
+          {
+            "company": "Cini Minis",
+            "accountList": [
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 45000000,
+                "currencyCode": "VND"
+              },
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 5170000000,
+                "currencyCode": "VND"
+              },
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 5170000000,
+                "currencyCode": "VND"
+              }
+            ]
+          },
+          {
+            "company": "Apple",
+            "accountList": [
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 45000000,
+                "currencyCode": "VND"
+              },
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 5170000000,
+                "currencyCode": "VND"
+              }
+            ]
+          },
+          {
+            "company": "Google",
+            "accountList": [
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 45000000,
+                "currencyCode": "VND"
+              },
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 5170000000,
+                "currencyCode": "VND"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "city": "Can Tho City",
+        "cityAccountItems": [
+          {
+            "company": "FPT Software",
+            "accountList": [
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 45000000,
+                "currencyCode": "VND"
+              },
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 5170000000,
+                "currencyCode": "VND"
+              }
+            ]
+          },
+          {
+            "company": "Candy Game",
+            "accountList": [
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 45000000,
+                "currencyCode": "VND"
+              },
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 5170000000,
+                "currencyCode": "VND"
+              }
+            ]
+          },
+          {
+            "company": "Angry bird",
+            "accountList": [
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 45000000,
+                "currencyCode": "VND"
+              },
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 5170000000,
+                "currencyCode": "VND"
+              }
+            ]
+          },
+          {
+            "company": "Loumidis",
+            "accountList": [
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 45000000,
+                "currencyCode": "VND"
+              },
+              {
+                "accountType": "Current Account",
+                "accountTypeNumber": 1,
+                "accountNumber": "501-576897-001",
+                "endDate": "2015-12-25T22:53:03+00:00",
+                "availableMoney": 5170000000,
+                "currencyCode": "VND"
+              }
+            ]
           }
         ]
       }

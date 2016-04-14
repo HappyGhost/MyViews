@@ -22,6 +22,11 @@ public class DateTimeUtils {
 
     public static final String FULL_DATE_PATTERN = "EEEE - MM/dd/yyyy";
 
+    public static final String BIRTH_DATE_PATTERN = "dd/MM/yyyy";
+    public static final String DATE_MONTH_DATE_PATTERN = "MMM dd";
+    public static final String MONTH_YEAR_PATTERN = "MMM yyyy";
+    public static final String DAY_MONTH_YEAR_FORMAT = "dd - MM - yyyy";
+
     public static String convertServerTime(String dateTime, String convertPattern) {
         SimpleDateFormat sdf = new SimpleDateFormat(SERVER_DATE_TIME_PATTERN, java.util.Locale.getDefault());
         try {
