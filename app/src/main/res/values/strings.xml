@@ -26,8 +26,14 @@
     <!-- Material design example -->
     <string name="account_expire_date">Maturity date: </string>
     <string name="account_available">Available funds</string>
+    <string name="account_segment_local_account">Local accounts</string>
+    <string name="account_segment_global_account">Global accounts</string>
+    <string name="account_group_title_format">%1$s (%2$d)</string>
+    <string name="account_text_location">LOCATION</string>
+    <string name="hint_search">Search</string>
+    <string name="dialog_title_select_location">Select Location</string>
 
-    <!-- Bar chart example-->
+    <!-- Bar chart, custom calendar -->
     <string name="bar_chart_label_income">Income</string>
     <string name="bar_chart_label_spent">Spent</string>
     <string name="bar_chart_label_income_uppercase">INCOME</string>
@@ -65,5 +71,10 @@
     <string name="text_from">From</string>
     <string name="text_to">To</string>
     <string name="empty_string">empty</string>
+    <string name="btnCancel">Cancel</string>
+    <string name="button_reset_text">Reset</string>
+    <string name="label_phone_number">Phone Number</string>
+    <string name="dialog_timesquare_from_date">From Date</string>
+    <string name="dialog_timesquare_to_date">To Date</string>
 
 </resources>

@@ -36,12 +36,17 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme"/>
         <activity
-            android:name="com.mysource.myview.ui.activity.BasicCoordinatorLayoutActivity"
+            android:name=".ui.activity.BasicCoordinatorLayoutActivity_1"
             android:label="@string/app_name"
             android:theme="@style/AppTheme"/>
 
         <activity
             android:name="com.mysource.myview.ui.activity.AccountDetailActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppThemeGrey"/>
+
+        <activity
+            android:name="com.mysource.myview.ui.activity.BasicCoordinatorLayoutActivity_2"
             android:label="@string/app_name"
             android:theme="@style/AppThemeGrey"/>
     </application>

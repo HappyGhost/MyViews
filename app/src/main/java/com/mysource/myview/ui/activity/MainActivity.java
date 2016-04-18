@@ -47,10 +47,14 @@ public class MainActivity extends BaseActivity {
                         break;
 
                     case 3:
-                        ActivityHelper.openBasicCoodinatorActivity(mContext);
+                        ActivityHelper.openBasicCoordinatorActivity(mContext);
                         break;
 
                     case 4:
+                        ActivityHelper.openBasicCoordinatorActivity_2(mContext);
+                        break;
+
+                    case 5:
                         ActivityHelper.openAccountDetailActivity(mContext);
                         break;
                 }

@@ -3,6 +3,7 @@
 
     <!-- Main color -->
     <color name="white">#ffffff</color>
+    <color name="colorPrimary">#008fd5</color>
 
     <!-- Chart View -->
     <color name="colorBlueBackground">#037ab4</color>
@@ -26,6 +27,7 @@
     <!-- Material design example-->
     <color name="accountHeaderBackgroundColor">#f4f6f8</color>
     <color name="colorLittleGrey">#979fa6</color>
+    <color name="circle_color_stroke_indicator">#64FFFFFF</color>
 
     <!-- alpha color-->
     <color name="colorWhite60Percent">#99ffffff</color>

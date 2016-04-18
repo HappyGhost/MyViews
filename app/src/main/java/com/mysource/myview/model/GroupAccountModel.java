@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by tung.hoang on 1/22/2016.
  */
-public class GroupAccountModel implements IModel, ParentListItem {
+public class GroupAccountModel implements ParentListItem, HeaderModel {
 
     @SerializedName("accountType")
     String accountType;
@@ -40,5 +40,10 @@ public class GroupAccountModel implements IModel, ParentListItem {
     @Override
     public boolean isInitiallyExpanded() {
         return false;
+    }
+
+    @Override
+    public List getChildList() {
+        return listModel;
     }
 }

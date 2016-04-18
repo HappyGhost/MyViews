@@ -9,8 +9,8 @@ import android.widget.TextView;
 import com.mysource.myview.R;
 import com.mysource.myview.mockup.SampleMockUpData;
 import com.mysource.myview.model.AccountDashBoardModel;
-import com.mysource.myview.ui.adapter.AccountAdapter;
 import com.mysource.myview.ui.adapter.AccountCarouselAdapter;
+import com.mysource.myview.ui.adapter.LocalAccountAdapter;
 import com.mysource.myview.ui.widget.CirclePageIndicator;
 
 import butterknife.Bind;
@@ -58,7 +58,7 @@ public class AccountFragment extends BaseFragment {
         pageIndicator.setViewPager(carouselPager);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        AccountAdapter accountAdapter = new AccountAdapter(mAccountDashBoardModel.getLocalAccountList());
+        LocalAccountAdapter accountAdapter = new LocalAccountAdapter(mContext, mAccountDashBoardModel.getLocalAccountList());
         recyclerView.setAdapter(accountAdapter);
     }
 

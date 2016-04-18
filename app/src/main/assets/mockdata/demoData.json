@@ -12,11 +12,15 @@
     "description": "This is simple sample for merry christmas."
   },
   {
-    "title": "Material design: Basic coordinator layout",
+    "title": "Material design 1: Basic coordinator layout",
     "description": "This is example code how to use coordinator layout"
   },
   {
-    "title": "Custom view: bar chart",
+    "title": "Material design 2: Basic coordinator layout",
+    "description": "This is second example code how to use coordinator layout"
+  },
+  {
+    "title": "Bar chart + custom calendar + advanced coordinator layout",
     "description": "The customized bar chart display income and spent of the account"
   }
 ]

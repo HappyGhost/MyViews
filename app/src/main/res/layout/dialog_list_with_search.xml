@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- The main content view -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="314dp"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_white_background"
+        android:orientation="vertical"
+        android:paddingBottom="5dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/dialog_title_background">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_header"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@drawable/image_button_selector"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/btnCancel"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_header" />
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:background="@drawable/image_button_selector"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:src="@drawable/icon_back_black" />
+
+        </FrameLayout>
+
+        <View style="@style/horizontalDiv" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edtSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@null"
+                android:drawableLeft="@drawable/icon_search_black"
+                android:drawablePadding="10dp"
+                android:hint="@string/hint_search"
+                android:textSize="@dimen/text_normal" />
+
+        </LinearLayout>
+
+        <View style="@style/horizontalDiv" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dialog_background"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
+</LinearLayout>

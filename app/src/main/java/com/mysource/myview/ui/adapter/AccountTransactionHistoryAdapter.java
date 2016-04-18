@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.marcohc.robotocalendar.RobotoCalendarView;
 import com.mysource.myview.R;
 import com.mysource.myview.model.AccountDetailModel;
 import com.mysource.myview.model.AccountTransactionHistoryModel;
@@ -15,6 +16,7 @@ import com.mysource.myview.ui.adapter.holder.AccountTransactionHistoryHolder;
 import com.mysource.myview.ui.adapter.holder.BaseHolder;
 import com.mysource.myview.ui.adapter.holder.HeaderTransactionListHolder;
 import com.mysource.myview.ui.adapter.holder.SimpleHeaderListHolder;
+import com.mysource.myview.ui.dialog.TimeSquareDialog;
 import com.mysource.myview.util.DateTimeUtils;
 import com.mysource.myview.util.MoneyUtils;
 
@@ -46,6 +48,8 @@ public class AccountTransactionHistoryAdapter extends BaseAdapter<AccountTransac
     private List<AccountTransactionHistoryModel> mExpenseList;
     private Date mFromDate = null;
     private Date mToDate = null;
+    TimeSquareDialog mTimeSquareDialog;
+    TimeSquareDialog.TimeSquareDialogListener mTimeSquareListener;
 
     public AccountTransactionHistoryAdapter(Context context) {
         super(context);
@@ -142,66 +146,66 @@ public class AccountTransactionHistoryAdapter extends BaseAdapter<AccountTransac
                 }
             });
 
-//            headerHolder.lnDateFilterFrom.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    mTimeSquareDialog = new TimeSquareDialog(mContext);
-//                    mTimeSquareDialog.setModeSelect(RobotoCalendarView.MODE_START_DATE);
-//                    mTimeSquareDialog.show(new Date(), mFromDate, null, mTimeSquareListener);
-//
-//                }
-//            });
-//
-//            headerHolder.lnDateFilterTo.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    if (mFromDate != null) {
-//                        mTimeSquareDialog = new TimeSquareDialog(mContext);
-//                        mTimeSquareDialog.setModeSelect(RobotoCalendarView.MODE_END_DATE);
-//                        mTimeSquareDialog.show(new Date(), mFromDate, mToDate, mTimeSquareListener);
-//                    }
-//                }
-//            });
-//
-//            if (mTimeSquareListener == null) {
-//                mTimeSquareListener = new TimeSquareDialog.TimeSquareDialogListener() {
-//                    @Override
-//                    public void onSelectStartDate(Date date) {
-//                    }
-//
-//                    @Override
-//                    public void onSelectEndDate(Date date) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onReset() {
-//
-//
-//                    }
-//
-//                    @Override
-//                    public void onFinishSelect(RobotoCalendarView robotoCalendarView) {
-//                    }
-//
-//                    @Override
-//                    public void onDismiss(RobotoCalendarView robotoCalendarView) {
-//                        if (robotoCalendarView.getStartDay() == null && robotoCalendarView.getEndDay() == null) {
-//                            headerHolder.tvFromDate.setText("");
-//                            headerHolder.tvToDate.setText("");
-//                            mFromDate = null;
-//                            mToDate = null;
-//                            doFilter();
-//                        } else if (robotoCalendarView.getStartDay() != null && robotoCalendarView.getEndDay() != null) {
-//                            mFromDate = robotoCalendarView.getStartDay();
-//                            mToDate = robotoCalendarView.getEndDay();
-//                            headerHolder.tvFromDate.setText(DateTimeUtils.convertServerTime(mFromDate, DateTimeUtils.MONTH_DAY_YEAR_PATTERN));
-//                            headerHolder.tvToDate.setText(DateTimeUtils.convertServerTime(mToDate, DateTimeUtils.MONTH_DAY_YEAR_PATTERN));
-//                            doFilter();
-//                        }
-//                    }
-//                };
-//            }
+            headerHolder.lnDateFilterFrom.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mTimeSquareDialog = new TimeSquareDialog(mContext);
+                    mTimeSquareDialog.setModeSelect(RobotoCalendarView.MODE_START_DATE);
+                    mTimeSquareDialog.show(new Date(), mFromDate, null, mTimeSquareListener);
+
+                }
+            });
+
+            headerHolder.lnDateFilterTo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mFromDate != null) {
+                        mTimeSquareDialog = new TimeSquareDialog(mContext);
+                        mTimeSquareDialog.setModeSelect(RobotoCalendarView.MODE_END_DATE);
+                        mTimeSquareDialog.show(new Date(), mFromDate, mToDate, mTimeSquareListener);
+                    }
+                }
+            });
+
+            if (mTimeSquareListener == null) {
+                mTimeSquareListener = new TimeSquareDialog.TimeSquareDialogListener() {
+                    @Override
+                    public void onSelectStartDate(Date date) {
+                    }
+
+                    @Override
+                    public void onSelectEndDate(Date date) {
+
+                    }
+
+                    @Override
+                    public void onReset() {
+
+
+                    }
+
+                    @Override
+                    public void onFinishSelect(RobotoCalendarView robotoCalendarView) {
+                    }
+
+                    @Override
+                    public void onDismiss(RobotoCalendarView robotoCalendarView) {
+                        if (robotoCalendarView.getStartDay() == null && robotoCalendarView.getEndDay() == null) {
+                            headerHolder.tvFromDate.setText("");
+                            headerHolder.tvToDate.setText("");
+                            mFromDate = null;
+                            mToDate = null;
+                            doFilter();
+                        } else if (robotoCalendarView.getStartDay() != null && robotoCalendarView.getEndDay() != null) {
+                            mFromDate = robotoCalendarView.getStartDay();
+                            mToDate = robotoCalendarView.getEndDay();
+                            headerHolder.tvFromDate.setText(DateTimeUtils.convertServerTime(mFromDate, DateTimeUtils.MONTH_DAY_YEAR_PATTERN));
+                            headerHolder.tvToDate.setText(DateTimeUtils.convertServerTime(mToDate, DateTimeUtils.MONTH_DAY_YEAR_PATTERN));
+                            doFilter();
+                        }
+                    }
+                };
+            }
 
             headerHolder.bind(mAccountDetailModel, mContext);
 
